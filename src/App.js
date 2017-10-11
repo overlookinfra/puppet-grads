@@ -17,7 +17,7 @@ import {
   List,
   Card
 } from 'semantic-ui-react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -33,7 +33,7 @@ class App extends Component {
           <Grid.Row columns={2}>
             <Grid.Column width={6}>
               <Card fluid>
-                <Image src='' />
+                <Image src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/collage.jpg' />
                 <Card.Content>
                   <Card.Header>We think you'll like what you see.</Card.Header>
                 </Card.Content>
@@ -80,9 +80,11 @@ class App extends Component {
                   As we are hiring for both Graduates and Interns, to get a feel for Puppet and what it's like to work here we are holding a Meetup on the 26th October @ 6pm. On the 4th Floor, 40 Linenhall Street, BT2 8BA; pizza shall be eaten, beer (and non-alcoholic drinks) shall be drank, much fun shall be had. There will be plenty of fellow engineers around to grab for a chat, we do not believe in stupid questions here :) If you want to join us for a night of thrilling activities, also if you are interested in the Graduate/Intern positions and are currently studying Computer Science or Software Engineering, click the button below to register.
                 </p>
                 
-                <Button size='massive'>
-                Massive
-                </Button>
+                <a href="https://puppet3.typeform.com/to/t2F0lJ">
+                  <Button primary size='massive'>
+                    Register Now!
+                  </Button>
+                </a>
               </Message>
             </Grid.Column>
           </Grid.Row>
