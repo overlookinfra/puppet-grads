@@ -23,10 +23,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Grid container style={{ padding: '5em 0em' }}>
+        <Grid stackable container style={{ 'text-align': 'left', padding: '5em 0em' }}>
           <Grid.Row>
             <Grid.Column>
-            <Header as='h1' dividing>Welcome to Puppet.</Header>
+            <Header as='h1' dividing>Welcome to Puppet</Header>
             </Grid.Column>
           </Grid.Row>
           
@@ -41,10 +41,14 @@ class App extends Component {
             </Grid.Column>
             
             <Grid.Column width={10}>
-              <Message style={{ 'text-align': 'left' }}>
                 <p>
                   If you like a challenge and want to apply to a kickass organisation that is one of the leading automation companies in the world, then look no further!
                 </p>
+              <Message info>
+                <Message.Header>
+                  Technologies
+                </Message.Header>
+                
                 <p>
                   At Puppet, you’ll gain experience with a wide range of technologies:
                 </p>
@@ -57,10 +61,16 @@ class App extends Component {
                   <List.Item>Automated testing (Ruby, Selenium)</List.Item>
                   <List.Item>DevOps and Configuration Management </List.Item>
                 </List>
+              </Message>
                 
-                <p>
-                  We are also an Open Source company and working with us is a good way to get your name out in the Open Source community.
-                </p>
+              <p>
+                We are also an Open Source company and working with us is a good way to get your name out in the Open Source community.
+              </p>
+                
+              <Message info>
+                <Message.Header>
+                  Fun
+                </Message.Header>
                 
                 <p>
                   We aren’t just about the work, we also like to have fun too. Our main headquarters is in Portland, Oregon, with the Belfast office the second biggest in the world. It's awesome to work here - wth a city centre office location, we get up to all sorts of fun activities:
@@ -75,17 +85,36 @@ class App extends Component {
                   <List.Item>A state-of-the-art coffee machine</List.Item>
                   <List.Item>and most importantly - Miku, our resident four-legged employee!</List.Item>
                 </List>
-
-                <p>
-                  As we are hiring for both Graduates and Interns, to get a feel for Puppet and what it's like to work here we are holding a Meetup on the 26th October @ 6pm. On the 4th Floor, 40 Linenhall Street, BT2 8BA; pizza shall be eaten, beer (and non-alcoholic drinks) shall be drank, much fun shall be had. There will be plenty of fellow engineers around to grab for a chat, we do not believe in stupid questions here :) If you want to join us for a night of thrilling activities, also if you are interested in the Graduate/Intern positions and are currently studying Computer Science or Software Engineering, click the button below to register.
-                </p>
-                
-                <a href="https://puppet3.typeform.com/to/t2F0lJ">
-                  <Button primary size='massive'>
-                    Register Now!
-                  </Button>
-                </a>
               </Message>
+
+              <Card fluid>
+                <Card.Content>
+                  <Card.Header>
+                    Puppet Open Doors
+                  </Card.Header>
+                  <Card.Meta>
+                    <span className='date'>
+                      26th October @ 6pm
+                    </span>
+                  </Card.Meta>
+                  <Card.Description>
+                    As we are hiring for both Graduates and Interns, to get a feel for Puppet and what it's like to work here we are holding a Meetup. Pizza shall be eaten, beer (and non-alcoholic drinks) shall be drank, much fun shall be had. There will be plenty of fellow engineers around to grab for a chat, we do not believe in stupid questions here :) If you want to join us for a night of thrilling activities, also if you are interested in the Graduate/Intern positions and are currently studying Computer Science or Software Engineering, click the button below to register.
+                  </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                  <Icon name='map' />
+                  4th Floor, 40 Linenhall Street, BT2 8BA
+                </Card.Content>
+                <Card.Content extra>
+                  <div className='ui one buttons'>
+                    <a href="https://puppet3.typeform.com/to/t2F0lJ">
+                      <Button primary>
+                        Register Now!
+                      </Button>
+                    </a>
+                  </div>
+                </Card.Content>
+              </Card>
             </Grid.Column>
           </Grid.Row>
         </Grid>
