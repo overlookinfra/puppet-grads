@@ -13,6 +13,7 @@ import {
   Menu,
   Message,
   Segment,
+  Popup,
   Table,
   List,
   Card
@@ -83,7 +84,7 @@ class App extends Component {
                   <List.Item>Free beer (with beer tastings to choose the next batch)</List.Item>
                   <List.Item>Lego, games consoles, boardgames</List.Item>
                   <List.Item>A state-of-the-art coffee machine</List.Item>
-                  <List.Item>and most importantly - Miku, our resident four-legged employee!</List.Item>
+                  <List.Item>and most importantly - <Popup trigger={<Label color='yellow'>Miku</Label>}><Image src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/collage.jpg' /></Popup>, our resident four-legged employee!</List.Item> 
                 </List>
               </Message>
 
