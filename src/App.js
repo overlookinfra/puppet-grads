@@ -10,6 +10,7 @@ import {
   Icon,
   Image,
   Label,
+  Reveal,
   Menu,
   Message,
   Segment,
@@ -84,7 +85,13 @@ class App extends Component {
                   <List.Item>Free beer (with beer tastings to choose the next batch)</List.Item>
                   <List.Item>Lego, games consoles, boardgames</List.Item>
                   <List.Item>A state-of-the-art coffee machine</List.Item>
-                  <List.Item>and most importantly - <Popup trigger={<Label color='yellow'>Miku</Label>}><Image src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/collage.jpg' /></Popup>, our resident four-legged employee!</List.Item> 
+                  <List.Item>
+                    and most importantly - 
+                    <Popup trigger={<Label color='yellow'>Miku</Label>}>
+                      Pop by at our booth, say the password: <strong>Miku</strong> and get special freebies.
+                    </Popup>
+                    , our resident four-legged employee!
+                  </List.Item> 
                 </List>
               </Message>
 
@@ -104,7 +111,7 @@ class App extends Component {
                 </Card.Content>
                 <Card.Content extra>
                   <Icon name='map' />
-                  4th Floor, 40 Linenhall Street, BT2 8BA
+                  <a href="https://goo.gl/maps/7tUVkcgEHLA2">4th Floor, 40 Linenhall Street, BT2 8BA</a>
                 </Card.Content>
                 <Card.Content extra>
                   <div className='ui one buttons'>
@@ -116,6 +123,25 @@ class App extends Component {
                   </div>
                 </Card.Content>
               </Card>
+              
+              <Card fluid>
+                <Card.Content>
+                  <Card.Header>
+                    Employees of the month
+                  </Card.Header>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <Image.Group size='small'>
+                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/darwin.jpg' size='small' />
+                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/duffy.jpg' size='small' />
+                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/betty.jpg' size='small' />
+                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/poppy.jpg' size='small' />
+                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/miku_needs_you.jpg' size='small' />
+                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/rosie.jpg' size='small' />
+                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/kula.jpg' size='small' />
+                    </Image.Group>
+                  </Card.Content>
+                </Card>
             </Grid.Column>
           </Grid.Row>
         </Grid>
