@@ -36,11 +36,23 @@ class App extends Component {
             <Grid.Column width={6}>
               <Card fluid>
                 <Image src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/collage.jpg' />
-                <Card.Content>
+                <Card.Content textAlign='center'>
                   <Card.Header>We think you'll like what you see.</Card.Header>
+                  
+                  <Divider />
+                  
+                  <Button.Group>
+                    <Button  color='facebook' as="a" href="https://www.facebook.com/PuppetBelfast/">
+                      <Icon name='facebook' /> facebook
+                    </Button>
+                    <Button  color='twitter' as="a" href="https://twitter.com/puppetbelfast">
+                      <Icon name='twitter' /> twitter
+                    </Button>
+                  </Button.Group>
                 </Card.Content>
               </Card>
             </Grid.Column>
+            
             
             <Grid.Column width={10}>
                 <p>
@@ -114,13 +126,16 @@ class App extends Component {
                   <a href="https://goo.gl/maps/7tUVkcgEHLA2">4th Floor, 40 Linenhall Street, BT2 8BA</a>
                 </Card.Content>
                 <Card.Content extra>
-                  <div className='ui one buttons'>
-                    <a href="https://puppet3.typeform.com/to/t2F0lJ">
-                      <Button primary>
+                  <Grid columns={2}>
+                    <Grid.Column>
+                      <Button color='yellow' as="a" href="https://puppet3.typeform.com/to/t2F0lJ">
                         Register Now!
                       </Button>
-                    </a>
-                  </div>
+                    </Grid.Column>
+                      
+                    <Grid.Column textAlign='right'>
+                    </Grid.Column>
+                  </Grid>
                 </Card.Content>
               </Card>
               
