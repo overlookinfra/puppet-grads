@@ -64,7 +64,7 @@ class App extends Component {
 
             <Grid.Column width={10}>
               <p>
-                If you like a challenge and want to apply to a kickass organisation that is one of the leading automation companies in the world, then look no further!
+                If you like challenges and want to apply to one of the leading automation companies in the world, then look no further!
               </p>
               <Message info>
                 <Message.Header>
@@ -76,7 +76,7 @@ class App extends Component {
                 </p>
 
                 <List bulleted>
-                  <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack)</List.Item>
+                  <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack, Kubernetes)</List.Item>
                   <List.Item>Javascript (Ember.js, React.js)</List.Item>
                   <List.Item>Backend Languages (Go, Clojure)</List.Item>
                   <List.Item>Databases (PostgreSQL, GraphQL)</List.Item>
@@ -86,7 +86,7 @@ class App extends Component {
               </Message>
 
               <p>
-                We are also an Open Source company and working with us is a good way to get your name out in the Open Source community.
+                We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community.
               </p>
 
               <Message info>
@@ -95,7 +95,7 @@ class App extends Component {
                 </Message.Header>
 
                 <p>
-                  We aren’t just about the work, we also like to have fun too. Our main headquarters is in Portland, Oregon, with the Belfast office the second biggest in the world. It's awesome to work here - wth a city centre office location, we get up to all sorts of fun activities:
+                  We aren’t just about the work; we like to play too! Our main headquarters is in Portland, Oregon, with the Belfast office being the second biggest in the world. It's fantastic to work here - with a city centre office location; we get up to all sorts of fun activities:
                 </p>
 
                 <List bulleted>
@@ -103,7 +103,7 @@ class App extends Component {
                   <List.Item>Breakfast baps on Fridays</List.Item>
                   <List.Item>Fruit, snacks</List.Item>
                   <List.Item>Free beer (with beer tastings to choose the next batch)</List.Item>
-                  <List.Item>Lego, games consoles, boardgames</List.Item>
+                  <List.Item>Lego, games consoles, board games</List.Item>
                   <List.Item>A state-of-the-art coffee machine</List.Item>
                   <List.Item>
                     Most importantly -
@@ -113,10 +113,10 @@ class App extends Component {
               </Message>
 
               <p>
-                At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be put in a team with other engineers and treated as a peer.
+                At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer.
                 <br />
                 <br />
-                You'll be given real work on real projects. It's hard work, but if you are up for the challenge we'd like to hear from you!
+                You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!
               </p>
 
               <Card fluid>
@@ -130,7 +130,7 @@ class App extends Component {
                     </span>
                   </Card.Meta>
                   <Card.Description>
-                    As we are hiring for both Graduates and Interns, to get a feel for Puppet and what it's like to work here we are holding a Meetup. Pizza shall be eaten, beer (and non-alcoholic drinks) shall be drank, much fun shall be had. There will be plenty of fellow engineers around to grab for a chat, we do not believe in stupid questions here :) If you want to join us for a night of thrilling activities, also if you are interested in the Graduate/Intern positions and are currently studying Computer Science or Software Engineering, click the button below to register.
+                  We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun! There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click Register Now!
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
