@@ -7,9 +7,7 @@ import {
   Header,
   Icon,
   Image,
-  Label,
   Message,
-  Popup,
   List,
   Card,
 } from 'semantic-ui-react';
@@ -39,12 +37,12 @@ class App extends Component {
                     <Button color="facebook" as="a" href="https://www.facebook.com/PuppetBelfast/">
                       <Icon name="facebook" />
                       {' '}
-facebook
+                      facebook
                     </Button>
                     <Button color="twitter" as="a" href="https://twitter.com/puppetbelfast">
                       <Icon name="twitter" />
                       {' '}
-twitter
+                      twitter
                     </Button>
                   </Button.Group>
                 </Card.Content>
@@ -54,7 +52,7 @@ twitter
 
             <Grid.Column width={10}>
               <p>
-                  If you like a challenge and want to apply to a kickass organisation that is one of the leading automation companies in the world, then look no further!
+                If you like a challenge and want to apply to a kickass organisation that is one of the leading automation companies in the world, then look no further!
               </p>
               <Message info>
                 <Message.Header>
@@ -96,15 +94,8 @@ twitter
                   <List.Item>Lego, games consoles, boardgames</List.Item>
                   <List.Item>A state-of-the-art coffee machine</List.Item>
                   <List.Item>
-                    and most importantly -
-                    <Popup trigger={<Label color="yellow">Miku</Label>}>
-                      Pop by at our booth, say the password:
-                      {' '}
-                      <strong>Miku</strong>
-                      {' '}
-and get special freebies.
-                    </Popup>
-                    , our resident four-legged employee!
+                    Most importantly -
+                      Pop by at our booth, say the password 'Miku' to get special freebies.
                   </List.Item>
                 </List>
               </Message>
@@ -147,23 +138,45 @@ and get special freebies.
                   </Grid>
                 </Card.Content>
               </Card>
+              
+              <p>
+                But wait, there's more!
+              </p>
 
               <Card fluid>
                 <Card.Content>
                   <Card.Header>
-                    Employees of the month
+                    Puppet Pups
                   </Card.Header>
+                  <Card.Meta>
+                    Puppet is a dog friendly office. Miku is in most days, but the others come in too from time to time.
+                  </Card.Meta>
                 </Card.Content>
                 <Card.Content extra>
-                  <Image.Group size="small">
-                    <Image shape="rounded" src={`${imagePath}darwin.jpg`} size="small" />
-                    <Image shape="rounded" src={`${imagePath}duffy.jpg`} size="small" />
-                    <Image shape="rounded" src={`${imagePath}betty.jpg`} size="small" />
-                    <Image shape="rounded" src={`${imagePath}poppy.jpg`} size="small" />
-                    <Image shape="rounded" src={`${imagePath}miku_needs_you.jpg`} size="small" />
-                    <Image shape="rounded" src={`${imagePath}rosie.jpg`} size="small" />
-                    <Image shape="rounded" src={`${imagePath}kula.jpg`} size="small" />
-                  </Image.Group>
+                  <Grid columns={3} divided style={{ textAlign: "center" }}>
+                    <Grid.Row>
+                      <Grid.Column>
+                        <Image shape="rounded" src={`${imagePath}miku_needs_you.jpg`} size="small" />
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Image shape="rounded" src={`${imagePath}rosie.jpg`} size="small" />
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Image shape="rounded" src={`${imagePath}poppy.jpg`} size="small" />
+                      </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                      <Grid.Column>
+                        <Image shape="rounded" src={`${imagePath}betty.jpg`} size="small" />
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Image shape="rounded" src={`${imagePath}kula.jpg`} size="small" />
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Image shape="rounded" src={`${imagePath}darwin.jpg`} size="small" />
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
                 </Card.Content>
               </Card>
             </Grid.Column>
