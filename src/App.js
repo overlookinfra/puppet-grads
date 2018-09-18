@@ -10,6 +10,8 @@ import {
   Message,
   List,
   Card,
+  Segment,
+  Responsive,
 } from 'semantic-ui-react';
 
 class App extends Component {
