@@ -1,95 +1,93 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   Button,
   Divider,
-  Dropdown,
   Grid,
   Header,
   Icon,
   Image,
   Label,
-  Reveal,
-  Menu,
   Message,
-  Segment,
   Popup,
-  Table,
   List,
-  Card
+  Card,
 } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
 class App extends Component {
   render() {
+    const imagePath = process.env.PUBLIC_URL + '/assets/'
     return (
       <div className="App">
         <Grid stackable container style={{ 'text-align': 'left', padding: '5em 0em' }}>
           <Grid.Row>
             <Grid.Column>
-            <Header as='h1' dividing>Welcome to Puppet</Header>
+              <Header as="h1" dividing>Welcome to Puppet</Header>
             </Grid.Column>
           </Grid.Row>
-          
+
           <Grid.Row columns={2}>
             <Grid.Column width={6}>
               <Card fluid>
-                <Image src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/collage.jpg' />
-                <Card.Content textAlign='center'>
+                <Image src={`${imagePath}collage.jpg`} />
+                <Card.Content textAlign="center">
                   <Card.Header>We think you'll like what you see.</Card.Header>
-                  
+
                   <Divider />
-                  
+
                   <Button.Group>
-                    <Button  color='facebook' as="a" href="https://www.facebook.com/PuppetBelfast/">
-                      <Icon name='facebook' /> facebook
+                    <Button color="facebook" as="a" href="https://www.facebook.com/PuppetBelfast/">
+                      <Icon name="facebook" />
+                      {' '}
+facebook
                     </Button>
-                    <Button  color='twitter' as="a" href="https://twitter.com/puppetbelfast">
-                      <Icon name='twitter' /> twitter
+                    <Button color="twitter" as="a" href="https://twitter.com/puppetbelfast">
+                      <Icon name="twitter" />
+                      {' '}
+twitter
                     </Button>
                   </Button.Group>
                 </Card.Content>
               </Card>
             </Grid.Column>
-            
-            
+
+
             <Grid.Column width={10}>
-                <p>
+              <p>
                   If you like a challenge and want to apply to a kickass organisation that is one of the leading automation companies in the world, then look no further!
-                </p>
+              </p>
               <Message info>
                 <Message.Header>
                   Technologies
                 </Message.Header>
-                
+
                 <p>
                   At Puppet, you’ll gain experience with a wide range of technologies:
                 </p>
-                
+
                 <List bulleted>
-                  <List.Item>Cloud/Containers (Docker, AWS, Azure, OpenStack)</List.Item>
+                  <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack)</List.Item>
                   <List.Item>Javascript (Ember.js, React.js)</List.Item>
                   <List.Item>Backend Languages (Go, Clojure)</List.Item>
-                  <List.Item>Databases (PostgreSQL)</List.Item>
-                  <List.Item>Automated testing (Ruby, Selenium)</List.Item>
+                  <List.Item>Databases (PostgreSQL, GraphQL)</List.Item>
+                  <List.Item>Automated testing (Ruby, Selenium, Nightwatch)</List.Item>
                   <List.Item>DevOps and Configuration Management </List.Item>
                 </List>
               </Message>
-                
+
               <p>
                 We are also an Open Source company and working with us is a good way to get your name out in the Open Source community.
               </p>
-                
+
               <Message info>
                 <Message.Header>
                   Fun
                 </Message.Header>
-                
+
                 <p>
                   We aren’t just about the work, we also like to have fun too. Our main headquarters is in Portland, Oregon, with the Belfast office the second biggest in the world. It's awesome to work here - wth a city centre office location, we get up to all sorts of fun activities:
                 </p>
-                
+
                 <List bulleted>
                   <List.Item>Free lunch once a week</List.Item>
                   <List.Item>Breakfast baps on Fridays</List.Item>
@@ -98,14 +96,25 @@ class App extends Component {
                   <List.Item>Lego, games consoles, boardgames</List.Item>
                   <List.Item>A state-of-the-art coffee machine</List.Item>
                   <List.Item>
-                    and most importantly - 
-                    <Popup trigger={<Label color='yellow'>Miku</Label>}>
-                      Pop by at our booth, say the password: <strong>Miku</strong> and get special freebies.
+                    and most importantly -
+                    <Popup trigger={<Label color="yellow">Miku</Label>}>
+                      Pop by at our booth, say the password:
+                      {' '}
+                      <strong>Miku</strong>
+                      {' '}
+and get special freebies.
                     </Popup>
                     , our resident four-legged employee!
-                  </List.Item> 
+                  </List.Item>
                 </List>
               </Message>
+
+              <p>
+                At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be put in a team with other engineers and treated as a peer.
+                <br />
+                <br />
+                You'll be given real work on real projects. It's hard work, but if you are up for the challenge we'd like to hear from you!
+              </p>
 
               <Card fluid>
                 <Card.Content>
@@ -113,8 +122,8 @@ class App extends Component {
                     Puppet Open Doors
                   </Card.Header>
                   <Card.Meta>
-                    <span className='date'>
-                      26th October @ 6pm
+                    <span className="date">
+                      Date TBC
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -122,41 +131,41 @@ class App extends Component {
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                  <Icon name='map' />
+                  <Icon name="map" />
                   <a href="https://goo.gl/maps/7tUVkcgEHLA2">4th Floor, 40 Linenhall Street, BT2 8BA</a>
                 </Card.Content>
                 <Card.Content extra>
                   <Grid columns={2}>
                     <Grid.Column>
-                      <Button color='yellow' as="a" href="https://puppet3.typeform.com/to/t2F0lJ">
+                      <Button disabled color="yellow" as="a" href="">
                         Register Now!
                       </Button>
                     </Grid.Column>
-                      
-                    <Grid.Column textAlign='right'>
+
+                    <Grid.Column textAlign="right">
                     </Grid.Column>
                   </Grid>
                 </Card.Content>
               </Card>
-              
+
               <Card fluid>
                 <Card.Content>
                   <Card.Header>
                     Employees of the month
                   </Card.Header>
-                  </Card.Content>
-                  <Card.Content extra>
-                    <Image.Group size='small'>
-                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/darwin.jpg' size='small' />
-                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/duffy.jpg' size='small' />
-                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/betty.jpg' size='small' />
-                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/poppy.jpg' size='small' />
-                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/miku_needs_you.jpg' size='small' />
-                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/rosie.jpg' size='small' />
-                      <Image shape='rounded' src='https://s3-eu-west-1.amazonaws.com/puppetbelfastgradandintern/kula.jpg' size='small' />
-                    </Image.Group>
-                  </Card.Content>
-                </Card>
+                </Card.Content>
+                <Card.Content extra>
+                  <Image.Group size="small">
+                    <Image shape="rounded" src={`${imagePath}darwin.jpg`} size="small" />
+                    <Image shape="rounded" src={`${imagePath}duffy.jpg`} size="small" />
+                    <Image shape="rounded" src={`${imagePath}betty.jpg`} size="small" />
+                    <Image shape="rounded" src={`${imagePath}poppy.jpg`} size="small" />
+                    <Image shape="rounded" src={`${imagePath}miku_needs_you.jpg`} size="small" />
+                    <Image shape="rounded" src={`${imagePath}rosie.jpg`} size="small" />
+                    <Image shape="rounded" src={`${imagePath}kula.jpg`} size="small" />
+                  </Image.Group>
+                </Card.Content>
+              </Card>
             </Grid.Column>
           </Grid.Row>
         </Grid>
