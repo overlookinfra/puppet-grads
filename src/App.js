@@ -27,7 +27,17 @@ class App extends Component {
           <Grid.Row columns={2}>
             <Grid.Column width={6}>
               <Card fluid>
-                <Image src={`${imagePath}collage.jpg`} />
+                <Segment.Group>
+                  <Responsive as={Segment} {...Responsive.onlyMobile}>
+                    <Image src={`${imagePath}collage-small.jpg`} />
+                  </Responsive>
+                  <Responsive as={Segment} {...Responsive.onlyTablet}>
+                    <Image src={`${imagePath}collage-small.jpg`} />
+                  </Responsive>
+                  <Responsive as={Segment} {...Responsive.onlyComputer}>
+                    <Image src={`${imagePath}collage.jpg`} />
+                  </Responsive>
+                </Segment.Group>
                 <Card.Content textAlign="center">
                   <Card.Header>We think you'll like what you see.</Card.Header>
 
@@ -138,7 +148,7 @@ class App extends Component {
                   </Grid>
                 </Card.Content>
               </Card>
-              
+
               <p>
                 But wait, there's more!
               </p>
