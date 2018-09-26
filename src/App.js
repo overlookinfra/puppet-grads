@@ -83,7 +83,7 @@ class App extends Component {
           {this.mobile_pups()}
         </Responsive>,
         <Responsive {...Responsive.onlyTablet}>
-          {this.mobile_pups()}
+          {this.desktop_pups()}
         </Responsive>,
         <Responsive {...Responsive.onlyComputer}>
           {this.desktop_pups()}
@@ -132,11 +132,27 @@ class App extends Component {
     )
   }
 
+  responsive_image(name) {
+    return (
+      [
+      <Responsive {...Responsive.onlyMobile}>
+        <Image src={`${this.imagePath}${name}_mobile.jpg`} />
+      </Responsive> ,
+      <Responsive {...Responsive.onlyTablet}>
+        <Image src={`${this.imagePath}${name}_tablet.jpg`} />
+      </Responsive> ,
+      <Responsive {...Responsive.onlyComputer}>
+        <Image src={`${this.imagePath}${name}.jpg`} />
+      </Responsive>
+      ]
+    )
+  }
+
 
   render() {
     return (
       <div className="App">
-        <Image src={`${this.imagePath}collage-middle.jpg`} />
+        {this.responsive_image('divider1')}
         <Header as="h2" dividing>Welcome to Puppet</Header>
         <div className={"content"}>
           <Grid container centered style={{ 'textAlign': 'left', 'padding': '1em 0em' }}>
@@ -168,7 +184,7 @@ class App extends Component {
                       Meet the Team
                   </Card.Header>
                     <Card.Meta>
-                      Puppet is a dog friendly office. Miku is in most days, but the others come in too from time to time.
+                      Puppet is a dog friendly office. Miku is in most days and the others come in too from time to time.
                   </Card.Meta>
                   </Card.Content>
                   <Card.Content extra>
@@ -197,7 +213,7 @@ class App extends Component {
             </Grid.Row>
           </Grid>
         </div>
-        <Image src={`${this.imagePath}collage-top.jpg`} />
+        {this.responsive_image('divider2')}
         <div className={"content"}>
           <Grid container style={{ 'text-align': 'left', padding: '1em 0em' }}>
             <Grid.Row columns={1}>
@@ -234,7 +250,7 @@ class App extends Component {
             </Grid.Row>
           </Grid>
         </div>
-        <Image src={`${this.imagePath}collage-bottom.jpg`} />
+        {this.responsive_image('divider3')}
         <div className={"content"}>
           <Grid container style={{ 'text-align': 'left', padding: '1em 0em' }}>
             <Grid.Row columns={1}>
