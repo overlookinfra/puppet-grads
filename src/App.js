@@ -121,13 +121,13 @@ class App extends Component {
     return (
       [
         <Responsive {...Responsive.onlyMobile}>
-          <Image src={`${this.imagePath}${name}_mobile.jpg`} />
+          <Image alt={name} src={`${this.imagePath}${name}_mobile.jpg`} />
         </Responsive>,
         <Responsive {...Responsive.onlyTablet}>
-          <Image src={`${this.imagePath}${name}_tablet.jpg`} />
+          <Image alt={name} src={`${this.imagePath}${name}_tablet.jpg`} />
         </Responsive>,
         <Responsive {...Responsive.onlyComputer}>
-          <Image src={`${this.imagePath}${name}.jpg`} />
+          <Image alt={name} src={`${this.imagePath}${name}.jpg`} />
         </Responsive>
       ]
     )
@@ -138,7 +138,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.responsive_image('divider1')}
-        <Header as="h2" dividing>Welcome to Puppet</Header>
+        <Header as="h1" dividing>Welcome to Puppet</Header>
         <div className={"content"}>
           <Grid container centered style={{ 'textAlign': 'left', 'padding': '1em 0em' }}>
             <Grid.Row columns={1}>
