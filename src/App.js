@@ -113,11 +113,11 @@ class App extends Component {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          Click for map: 
-          <a style={{color: "#4183c4"}} href="https://goo.gl/maps/7tUVkcgEHLA2"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
+          Click for map:
+          <a style={{ color: "#4183c4" }} href="https://goo.gl/maps/7tUVkcgEHLA2"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
         </Card.Content>
         <Card.Content extra>
-          <Grid columns={2}>
+          <Grid columns={1}>
             <Grid.Column>
               <Button disabled color="yellow" as="a" href="">
                 Register Now!
@@ -136,114 +136,122 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Grid stackable container style={{ 'text-align': 'left', padding: '5em 0em' }}>
-          <Grid.Row>
-            <Grid.Column>
-              <Header as="h1" dividing>Welcome to Puppet</Header>
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row columns={2}>
-            <Grid.Column width={6}>
-              <Card fluid>
-                <Responsive {...Responsive.onlyMobile}>
-                  <Image src={`${this.imagePath}collage-small.jpg`} />
-                </Responsive>
-                <Responsive  {...Responsive.onlyTablet}>
-                  <Image src={`${this.imagePath}collage-small.jpg`} />
-                </Responsive>
-                <Responsive  {...Responsive.onlyComputer}>
-                  <Image src={`${this.imagePath}collage.jpg`} />
-                </Responsive>
-                <Card.Content textAlign="center">
-                  <Card.Header>
-                    We think you'll like what you see.
+        <Image src={`${this.imagePath}collage-middle.jpg`} />
+        <Header as="h2" dividing>Welcome to Puppet</Header>
+        <div className={"content"}>
+          <Grid container centered style={{ 'textAlign': 'left', 'padding': '1em 0em' }}>
+            <Grid.Row columns={1}>
+              <Grid.Column>
+                <Card fluid>
+                  <Card.Content>
+                    <Card.Header>
+                      Apply Now
                   </Card.Header>
-                </Card.Content>
-              </Card>
-            </Grid.Column>
+                    <Card.Description>
+                      If you like challenges and want to apply to one of the leading automation companies in the world, then look no further!
+                  </Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <Grid columns={1}>
+                      <Grid.Column>
+                        <Button disabled color="yellow" as="a" href="">
+                          Register Now!
+                      </Button>
+                      </Grid.Column>
+                    </Grid>
+                  </Card.Content>
+                </Card>
 
-
-            <Grid.Column width={10}>
-              {this.render_register(true)}
-
-              <Card fluid>
-                <Card.Content>
-                  <Card.Header>
-                    Meet the Team
+                <Card fluid>
+                  <Card.Content>
+                    <Card.Header>
+                      Meet the Team
                   </Card.Header>
-                  <Card.Meta>
-                    Puppet is a dog friendly office. Miku is in most days, but the others come in too from time to time.
+                    <Card.Meta>
+                      Puppet is a dog friendly office. Miku is in most days, but the others come in too from time to time.
                   </Card.Meta>
-                </Card.Content>
-                <Card.Content extra>
-                  {this.render_pups()}
-                </Card.Content>
-              </Card>
+                  </Card.Content>
+                  <Card.Content extra>
+                    {this.render_pups()}
+                  </Card.Content>
+                </Card>
 
-              <Card fluid>
-                <Card.Content>
-                  If you like challenges and want to apply to one of the leading automation companies in the world, then look no further!
-                </Card.Content>
-              </Card>
-
-              <Message info>
-                <Message.Header>
-                  Technologies
+                <Message info>
+                  <Message.Header>
+                    Technologies
                 </Message.Header>
-                <p>
-                  At Puppet, you’ll gain experience with a wide range of technologies:
+                  <p>
+                    At Puppet, you’ll gain experience with a wide range of technologies:
                 </p>
-                <List bulleted>
-                  <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack, Kubernetes)</List.Item>
-                  <List.Item>Javascript (Ember.js, React.js)</List.Item>
-                  <List.Item>Backend Languages (Go, Clojure)</List.Item>
-                  <List.Item>Databases (PostgreSQL, GraphQL)</List.Item>
-                  <List.Item>Automated testing (Ruby, Selenium, Nightwatch)</List.Item>
-                  <List.Item>DevOps and Configuration Management </List.Item>
-                </List>
-              </Message>
+                  <List bulleted>
+                    <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack, Kubernetes)</List.Item>
+                    <List.Item>Javascript (Ember.js, React.js)</List.Item>
+                    <List.Item>Backend Languages (Go, Clojure)</List.Item>
+                    <List.Item>Databases (PostgreSQL, GraphQL)</List.Item>
+                    <List.Item>Automated testing (Ruby, Selenium, Nightwatch)</List.Item>
+                    <List.Item>DevOps and Configuration Management </List.Item>
+                  </List>
+                </Message>
 
-              <Card fluid>
-                <Card.Content>
-                  We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community.
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </div>
+        <Image src={`${this.imagePath}collage-top.jpg`} />
+        <div className={"content"}>
+          <Grid container style={{ 'text-align': 'left', padding: '1em 0em' }}>
+            <Grid.Row columns={1}>
+              <Grid.Column>
+
+                <Card fluid>
+                  <Card.Content>
+                    We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community.
                 </Card.Content>
-              </Card>
+                </Card>
 
-              <Message info>
-                <Message.Header>
-                  Fun
+
+                <Message info>
+                  <Message.Header>
+                    Fun
                 </Message.Header>
-                <p>
-                  We aren’t just about the work; we like to play too! Our main headquarters is in Portland, Oregon, with the Belfast office being the second biggest in the world. It's fantastic to work here - with a city centre office location; we get up to all sorts of fun activities:
+                  <p>
+                    We aren’t just about the work; we like to play too! Our main headquarters is in Portland, Oregon, with the Belfast office being the second biggest in the world. It's fantastic to work here - with a city centre office location; we get up to all sorts of fun activities:
                 </p>
-                <List bulleted>
-                  <List.Item>Free lunch once a week</List.Item>
-                  <List.Item>Breakfast baps on Fridays</List.Item>
-                  <List.Item>Fruit, snacks</List.Item>
-                  <List.Item>Free beer (with beer tastings to choose the next batch)</List.Item>
-                  <List.Item>Lego, games consoles, board games</List.Item>
-                  <List.Item>A state-of-the-art coffee machine</List.Item>
-                  <List.Item>
-                    Most importantly -
-                      Pop by at our booth, the first few to say the password 'Miku' will get special freebies.
+                  <List bulleted>
+                    <List.Item>Free lunch once a week</List.Item>
+                    <List.Item>Breakfast baps on Fridays</List.Item>
+                    <List.Item>Fruit, snacks</List.Item>
+                    <List.Item>Free beer (with beer tastings to choose the next batch)</List.Item>
+                    <List.Item>Lego, games consoles, board games</List.Item>
+                    <List.Item>A state-of-the-art coffee machine</List.Item>
+                    <List.Item>
+                      Most importantly -
+                        Pop by at our booth, the first few to say the password 'Miku' will get special freebies.
                   </List.Item>
-                </List>
-              </Message>
-
-              <Card fluid>
-                <Card.Content>
-                  At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer.
+                  </List>
+                </Message>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </div>
+        <Image src={`${this.imagePath}collage-bottom.jpg`} />
+        <div className={"content"}>
+          <Grid container style={{ 'text-align': 'left', padding: '1em 0em' }}>
+            <Grid.Row columns={1}>
+              <Grid.Column>
+                <Card fluid>
+                  <Card.Content>
+                    At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer.
                   <br />
-                  <br />
-                  You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!
+                    <br />
+                    You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!
                 </Card.Content>
-              </Card>
-
-              {this.render_register(false)}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+                </Card>
+                {this.render_register(false)}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </div>
       </div>
     );
   }
