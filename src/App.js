@@ -93,10 +93,7 @@ class App extends Component {
   }
 
   render_register(atTheTop) {
-    let desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun! There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click Register Now!"
-    if (atTheTop) {
-      desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Click Register Now!"
-    }
+    let desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun! There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click 'Sign Up' and let us know if you are attending!"
     return (
       <Card fluid>
         <Card.Content>
@@ -116,18 +113,6 @@ class App extends Component {
           Click for map:
           <a style={{ color: "#4183c4" }} href="https://goo.gl/maps/7tUVkcgEHLA2"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
         </Card.Content>
-        <Card.Content extra>
-          <Grid columns={1}>
-            <Grid.Column>
-              <Button disabled color="yellow" as="a" href="">
-                Register Now!
-                </Button>
-            </Grid.Column>
-
-            <Grid.Column textAlign="right">
-            </Grid.Column>
-          </Grid>
-        </Card.Content>
       </Card>
     )
   }
@@ -135,15 +120,15 @@ class App extends Component {
   responsive_image(name) {
     return (
       [
-      <Responsive {...Responsive.onlyMobile}>
-        <Image src={`${this.imagePath}${name}_mobile.jpg`} />
-      </Responsive> ,
-      <Responsive {...Responsive.onlyTablet}>
-        <Image src={`${this.imagePath}${name}_tablet.jpg`} />
-      </Responsive> ,
-      <Responsive {...Responsive.onlyComputer}>
-        <Image src={`${this.imagePath}${name}.jpg`} />
-      </Responsive>
+        <Responsive {...Responsive.onlyMobile}>
+          <Image src={`${this.imagePath}${name}_mobile.jpg`} />
+        </Responsive>,
+        <Responsive {...Responsive.onlyTablet}>
+          <Image src={`${this.imagePath}${name}_tablet.jpg`} />
+        </Responsive>,
+        <Responsive {...Responsive.onlyComputer}>
+          <Image src={`${this.imagePath}${name}.jpg`} />
+        </Responsive>
       ]
     )
   }
@@ -161,22 +146,24 @@ class App extends Component {
                 <Card fluid>
                   <Card.Content>
                     <Card.Header>
-                      Apply Now
+                      Interested in joining us?
                   </Card.Header>
                     <Card.Description>
-                      If you like challenges and want to apply to one of the leading automation companies in the world, then look no further!
+                      If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you!
                   </Card.Description>
                   </Card.Content>
                   <Card.Content extra>
                     <Grid columns={1}>
                       <Grid.Column>
                         <Button disabled color="yellow" as="a" href="">
-                          Register Now!
+                          Sign Up
                       </Button>
                       </Grid.Column>
                     </Grid>
                   </Card.Content>
                 </Card>
+
+                {this.render_register(false)}
 
                 <Card fluid>
                   <Card.Content>
@@ -209,6 +196,12 @@ class App extends Component {
                   </List>
                 </Message>
 
+                <Card fluid>
+                  <Card.Content>
+                    We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community.
+                </Card.Content>
+                </Card>
+
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -218,13 +211,6 @@ class App extends Component {
           <Grid container style={{ 'text-align': 'left', padding: '1em 0em' }}>
             <Grid.Row columns={1}>
               <Grid.Column>
-
-                <Card fluid>
-                  <Card.Content>
-                    We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community.
-                </Card.Content>
-                </Card>
-
 
                 <Message info>
                   <Message.Header>
@@ -246,28 +232,20 @@ class App extends Component {
                   </List.Item>
                   </List>
                 </Message>
+
+                <Card fluid>
+                  <Card.Content>
+                    At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer.
+                    <br />
+                    <br />
+                    You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!
+                  </Card.Content>
+                </Card>
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </div>
         {this.responsive_image('divider3')}
-        <div className={"content"}>
-          <Grid container style={{ 'text-align': 'left', padding: '1em 0em' }}>
-            <Grid.Row columns={1}>
-              <Grid.Column>
-                <Card fluid>
-                  <Card.Content>
-                    At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer.
-                  <br />
-                    <br />
-                    You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!
-                </Card.Content>
-                </Card>
-                {this.render_register(false)}
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </div>
       </div>
     );
   }
