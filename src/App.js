@@ -15,6 +15,8 @@ import {
 
 class App extends Component {
   imagePath = process.env.PUBLIC_URL + '/assets/'
+  mobileMaxWidth = "459"
+  desktopMinWidth = "460"
 
   responsive_image(name) {
     return (
@@ -81,10 +83,10 @@ class App extends Component {
     const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you!"
     const buttonText = "I'm interested!"
     return (
-      [<Responsive maxWidth={419}>
+      [<Responsive maxWidth={this.mobileMaxWidth}>
         {this.interested_mobile(title, desc, buttonText)}
       </Responsive>,
-      <Responsive minWidth={420}>
+      <Responsive minWidth={this.desktopMinWidth}>
         {this.interested(title, desc, buttonText)}
       </Responsive>]
     )
@@ -145,10 +147,10 @@ class App extends Component {
     const date = "Date: 25th October 2018"
     const desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun! There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click 'Sign Up' and let us know if you are attending!"
     return (
-      [<Responsive maxWidth={419}>
+      [<Responsive maxWidth={this.mobileMaxWidth}>
         {this.register_mobile(title, date, desc)}
       </Responsive>,
-      <Responsive minWidth={420}>
+      <Responsive minWidth={this.desktopMinWidth}>
         {this.register(title, date, desc)}
       </Responsive>]
     )
@@ -217,10 +219,10 @@ class App extends Component {
 
   render_pups() {
     return (
-      [<Responsive maxWidth={419}>
+      [<Responsive maxWidth={this.mobileMaxWidth}>
         {this.mobile_pups()}
       </Responsive>,
-      <Responsive minWidth={420}>
+      <Responsive minWidth={this.desktopMinWidth}>
         {this.desktop_pups()}
       </Responsive>]
     )
@@ -267,10 +269,10 @@ class App extends Component {
     const title = "Meet the Team"
     const desc = "Puppet is a dog friendly office. Miku is in most days and the others come in too from time to time."
     return (
-      [<Responsive maxWidth={419}>
+      [<Responsive maxWidth={this.mobileMaxWidth}>
         {this.meet_team_mobile(title, desc)}
       </Responsive>,
-      <Responsive minWidth={420}>
+      <Responsive minWidth={this.desktopMinWidth}>
         {this.meet_team(title, desc)}
       </Responsive>]
     )
@@ -297,10 +299,10 @@ class App extends Component {
   render_open_source() {
     const desc = "We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community."
     return (
-      [<Responsive maxWidth={419}>
+      [<Responsive maxWidth={this.mobileMaxWidth}>
         {this.open_source_mobile(desc)}
       </Responsive>,
-      <Responsive minWidth={420}>
+      <Responsive minWidth={this.desktopMinWidth}>
         {this.open_source(desc)}
       </Responsive>]
     )
@@ -334,10 +336,10 @@ class App extends Component {
     const desc = "At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer."
     const desc2 = "You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
     return (
-      [<Responsive maxWidth={419}>
+      [<Responsive maxWidth={this.mobileMaxWidth}>
         {this.peer_mobile(desc, desc2)}
       </Responsive>,
-      <Responsive minWidth={420}>
+      <Responsive minWidth={this.desktopMinWidth}>
         {this.peer(desc, desc2)}
       </Responsive>]
     )
