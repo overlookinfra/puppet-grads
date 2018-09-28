@@ -158,28 +158,28 @@ class App extends Component {
 
   mobile_pups() {
     return (
-      <Grid columns={2} style={{ textAlign: "center" }}>
+      <Grid columns={2} style={{ textAlign: "center", margin: "auto" }}>
         <Grid.Row>
-          <Grid.Column>
+          <Grid.Column style={{ textAlign: "center", margin: "auto" }}>
             <Image src={`${this.imagePath}miku_needs_you.jpg`} size="small" />
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column style={{ textAlign: "center", margin: "auto" }}>
             <Image src={`${this.imagePath}rosie.jpg`} size="small" />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column>
+          <Grid.Column style={{ textAlign: "center", margin: "auto" }}>
             <Image src={`${this.imagePath}poppy.jpg`} size="small" />
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column style={{ textAlign: "center", margin: "auto" }}>
             <Image src={`${this.imagePath}betty.jpg`} size="small" />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column>
+          <Grid.Column style={{ textAlign: "center", margin: "auto" }}>
             <Image src={`${this.imagePath}kula.jpg`} size="small" />
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column style={{ textAlign: "center", margin: "auto" }}>
             <Image src={`${this.imagePath}darwin.jpg`} size="small" />
           </Grid.Column>
         </Grid.Row>
