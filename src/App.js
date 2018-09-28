@@ -235,10 +235,8 @@ class App extends Component {
         <Header>
           {title}
         </Header>
-        <p>
-          <Card.Meta>
-            {desc}
-          </Card.Meta>
+        <p className={"date"}>
+          {desc}
         </p>
         <p>
           {this.render_pups()}
@@ -351,6 +349,7 @@ class App extends Component {
       <div className="App">
         {this.responsive_image('divider1')}
         <Header as="h1" dividing>Welcome to Puppet</Header>
+        <br/>
         <div className={"content"}>
           <Grid container style={{ 'padding': '1em 0em' }}>
             <Grid.Row columns={1}>
@@ -383,7 +382,6 @@ class App extends Component {
                 </Message>
 
                 {this.render_open_source()}
-
               </Grid.Column>
             </Grid.Row>
           </Grid>
