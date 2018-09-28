@@ -95,7 +95,7 @@ class App extends Component {
   render_register(atTheTop) {
     let desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun! There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click 'Sign Up' and let us know if you are attending!"
     return (
-      <Card fluid style={{ "marginTop": "3em" }}>
+      <Card fluid style={{ "marginTop": "2em" }}>
         <Card.Content>
           <Card.Header>
             Puppet Open Doors
@@ -165,7 +165,7 @@ class App extends Component {
 
                 {this.render_register(false)}
 
-                <Card fluid style={{ "marginTop": "3em" }}>
+                <Card fluid style={{ "marginTop": "2em" }}>
                   <Card.Content>
                     <Card.Header>
                       Meet the Team
@@ -179,26 +179,26 @@ class App extends Component {
                   </Card.Content>
                 </Card>
 
-                <Message info style={{ "marginTop": "3em" }}>
+                <Message info style={{ "marginTop": "2em" }}>
                   <Message.Header>
                     Technologies
                 </Message.Header>
-                <Message.Content>
-                  <p>
-                    At Puppet, you’ll gain experience with a wide range of technologies:
+                  <Message.Content>
+                    <p>
+                      At Puppet, you’ll gain experience with a wide range of technologies:
                 </p>
-                  <List bulleted className={"info-text"} >
-                    <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack, Kubernetes)</List.Item>
-                    <List.Item>Javascript (Ember.js, React.js)</List.Item>
-                    <List.Item>Backend Languages (Go, Clojure)</List.Item>
-                    <List.Item>Databases (PostgreSQL, GraphQL)</List.Item>
-                    <List.Item>Automated testing (Ruby, Selenium, Nightwatch)</List.Item>
-                    <List.Item>DevOps and Configuration Management </List.Item>
-                  </List>
-                </Message.Content>
+                    <List bulleted className={"info-text"} >
+                      <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack, Kubernetes)</List.Item>
+                      <List.Item>Javascript (Ember.js, React.js)</List.Item>
+                      <List.Item>Backend Languages (Go, Clojure)</List.Item>
+                      <List.Item>Databases (PostgreSQL, GraphQL)</List.Item>
+                      <List.Item>Automated testing (Ruby, Selenium, Nightwatch)</List.Item>
+                      <List.Item>DevOps and Configuration Management </List.Item>
+                    </List>
+                  </Message.Content>
                 </Message>
 
-                <Card fluid style={{ "marginTop": "3em", "marginBottom": "2em" }}>
+                <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
                   <Card.Content className={"info-text"}>
                     We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community.
                 </Card.Content>
@@ -214,7 +214,7 @@ class App extends Component {
             <Grid.Row columns={1}>
               <Grid.Column>
 
-                <Message info style={{ "marginTop": "3em" }}>
+                <Message info style={{ "marginTop": "1em" }}>
                   <Message.Header as="h1">
                     Fun
                   </Message.Header>
@@ -234,7 +234,7 @@ class App extends Component {
                   </Message.Content>
                 </Message>
 
-                <Card fluid style={{ "marginTop": "3em", "marginBottom": "2em" }}>
+                <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
                   <Card.Content className={"info-text"}>
                     At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer.
                     <br />
