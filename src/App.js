@@ -8,7 +8,6 @@ import {
   Image,
   Message,
   List,
-  Card,
   Responsive,
   Divider,
 } from 'semantic-ui-react';
@@ -22,7 +21,7 @@ class App extends Component {
     return (
       [
         <Responsive {...Responsive.onlyMobile}>
-          <Image style={{textAlign: "center", margin: "auto"}} alt={name} src={`${this.imagePath}${name}_mobile.jpg`} />
+          <Image style={{ textAlign: "center", margin: "auto" }} alt={name} src={`${this.imagePath}${name}_mobile.jpg`} />
         </Responsive>,
         <Responsive {...Responsive.onlyTablet}>
           <Image alt={name} src={`${this.imagePath}${name}_tablet.jpg`} />
@@ -34,13 +33,16 @@ class App extends Component {
     )
   }
 
-  interested_mobile(title, desc, buttonText) {
+  render_interested() {
+    const title = "We think you'll like what you see."
+    const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you!"
+    const buttonText = "I'm interested!"
     return (
       <div>
         <Header>
           {title}
         </Header>
-        <p className={"info-text"} style={{"lineHeight": "1.7" }}>
+        <p className={"info-text ui-section"} style={{ "lineHeight": "1.7" }}>
           {desc}
         </p>
         <Grid columns={1}>
@@ -54,95 +56,11 @@ class App extends Component {
     )
   }
 
-  interested(title, desc, buttonText) {
-    return (
-      <Card fluid>
-        <Card.Content>
-          <Card.Header>
-            {title}
-          </Card.Header>
-          <Card.Description className={"info-text"}>
-            {desc}
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <Grid columns={1}>
-            <Grid.Column>
-              <Button disabled color="yellow" as="a" href="">
-                {buttonText}
-              </Button>
-            </Grid.Column>
-          </Grid>
-        </Card.Content>
-      </Card>
-    )
-  }
-
-  render_interested() {
-    const title = "We think you'll like what you see."
-    const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you!"
-    const buttonText = "I'm interested!"
-    return (
-      [<Responsive maxWidth={this.mobileMaxWidth}>
-        {this.interested_mobile(title, desc, buttonText)}
-      </Responsive>,
-      <Responsive minWidth={this.desktopMinWidth}>
-        {this.interested(title, desc, buttonText)}
-      </Responsive>]
-    )
-  }
-
   render_map() {
     return (
       ["Click for map:",
-      <a style={{ color: "#4183c4" }} href="https://goo.gl/maps/7tUVkcgEHLA2"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
+        <a style={{ color: "#4183c4" }} href="https://goo.gl/maps/7tUVkcgEHLA2"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
       ]
-    )
-  }
-
-  register_mobile(title, date, desc, desc2) {
-    return (
-      <div>
-        <Divider />
-        <Header style={{ "marginTop": "1em" }}>
-          {title}
-        </Header>
-        <p className="date">
-          {date}
-        </p>
-        <p className={"info-text"} style={{ "lineHeight": "1.7"}}>
-          {desc}
-          <br/><br/>
-            {desc2}
-        </p>
-        <Divider section />
-        <p className="date">
-          {this.render_map()}
-        </p>
-      </div>
-    )
-  }
-
-  register(title, date, desc, desc2) {
-    return (
-      <Card fluid style={{ "marginTop": "2em"}}>
-        <Card.Content>
-          <Card.Header>
-            {title}
-            </Card.Header>
-            <span className="date">
-              {date}
-            </span>
-          <Card.Description className={"info-text"}>
-            {desc}
-            <br/><br/>
-            {desc2}
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          {this.render_map()}
-        </Card.Content>
-      </Card>
     )
   }
 
@@ -152,12 +70,24 @@ class App extends Component {
     const desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun!"
     const desc2 = "There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click \"I'm Interested!\" and let us know if you are attending!"
     return (
-      [<Responsive maxWidth={this.mobileMaxWidth}>
-        {this.register_mobile(title, date, desc, desc2)}
-      </Responsive>,
-      <Responsive minWidth={this.desktopMinWidth}>
-        {this.register(title, date, desc, desc2)}
-      </Responsive>]
+      <div className={"ui-section"}>
+        <Divider />
+        <Header style={{ "marginTop": "1em" }}>
+          {title}
+        </Header>
+        <p className="date">
+          {date}
+        </p>
+        <p className={"info-text"} style={{ "lineHeight": "1.7" }}>
+          {desc}
+          <br /><br />
+          {desc2}
+        </p>
+        <Divider section />
+        <p className="date">
+          {this.render_map()}
+        </p>
+      </div>
     )
   }
 
@@ -233,9 +163,11 @@ class App extends Component {
     )
   }
 
-  meet_team_mobile(title, desc) {
+  render_meet_team() {
+    const title = "Meet the Team"
+    const desc = "Puppet is a dog friendly office. Miku is in most days and the others come in too from time to time."
     return (
-      <div style={{ "marginTop": "2em" }}>
+      <div style={{ "marginTop": "2em" }} className={"ui-section"}>
         <Divider />
         <Header>
           {title}
@@ -250,88 +182,12 @@ class App extends Component {
     )
   }
 
-  meet_team(title, desc) {
-    return (
-      <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
-        <Card.Content>
-          <Card.Header>
-            {title}
-          </Card.Header>
-          <Card.Meta>
-            {desc}
-          </Card.Meta>
-        </Card.Content>
-        <Card.Content extra>
-          {this.render_pups()}
-        </Card.Content>
-      </Card>
-    )
-  }
-
-  render_meet_team() {
-    const title = "Meet the Team"
-    const desc = "Puppet is a dog friendly office. Miku is in most days and the others come in too from time to time."
-    return (
-      [<Responsive maxWidth={this.mobileMaxWidth}>
-        {this.meet_team_mobile(title, desc)}
-      </Responsive>,
-      <Responsive minWidth={this.desktopMinWidth}>
-        {this.meet_team(title, desc)}
-      </Responsive>]
-    )
-  }
-
-  open_source_mobile(desc) {
-    return (
-      <p style={{ "marginBottom": "1em", "lineHeight": "1.7" }} className={"info-text"}>
-        {desc}
-      </p>
-    )
-  }
-
-  open_source(desc) {
-    return (
-      <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
-        <Card.Content className={"info-text"}>
-         {desc}
-        </Card.Content>
-      </Card>
-    )
-  }
-
   render_open_source() {
     const desc = "We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community."
     return (
-      [<Responsive maxWidth={this.mobileMaxWidth}>
-        {this.open_source_mobile(desc)}
-      </Responsive>,
-      <Responsive minWidth={this.desktopMinWidth}>
-        {this.open_source(desc)}
-      </Responsive>]
-    )
-  }
-
-  peer_mobile(desc, desc2) {
-    return (
-      <p  style={{"marginBottom": "1em", "lineHeight": "1.7" }} className={"info-text"}>
+      <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
         {desc}
-        <br/>
-        <br/>
-        {desc2}
       </p>
-    )
-  }
-
-  peer(desc, desc2) {
-    return (
-      <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
-        <Card.Content className={"info-text"}>
-          {desc}
-          <br/>
-          <br/>
-          {desc2}
-        </Card.Content>
-      </Card>
     )
   }
 
@@ -339,12 +195,12 @@ class App extends Component {
     const desc = "At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer."
     const desc2 = "You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
     return (
-      [<Responsive maxWidth={this.mobileMaxWidth}>
-        {this.peer_mobile(desc, desc2)}
-      </Responsive>,
-      <Responsive minWidth={this.desktopMinWidth}>
-        {this.peer(desc, desc2)}
-      </Responsive>]
+      <p style={{ "marginBottom": "1em", "lineHeight": "1.7" }} className={"info-text ui-section"}>
+        {desc}
+        <br />
+        <br />
+        {desc2}
+      </p>
     )
   }
 
@@ -353,28 +209,24 @@ class App extends Component {
     return (
       <div className="App">
         {this.responsive_image('divider1')}
-        <Header as="h1" dividing>Welcome to Puppet</Header>
-        <br/>
+        <Header as="h1" style={{ "paddingBottom": "1em"}} dividing>Welcome to Puppet</Header>
+        <br />
         <div className={"content"}>
           <Grid container style={{ 'padding': '1em 0em' }}>
             <Grid.Row columns={1}>
               <Grid.Column>
                 {this.render_interested()}
-
-                {this.render_register(false)}
-
+                {this.render_register()}
                 {this.render_meet_team()}
-
                 <Divider />
-
                 <Message info style={{ "marginTop": "1em" }} className={"info-text"}>
                   <Message.Header>
                     Technologies
                 </Message.Header>
                   <Message.Content>
-                    <p style={{"lineHeight": "1.7"}}>
+                    <p style={{ "lineHeight": "1.7" }}>
                       At Puppet, you’ll gain experience with a wide range of technologies:
-                </p>
+                    </p>
                     <List bulleted>
                       <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack, Kubernetes)</List.Item>
                       <List.Item>Javascript (Ember.js, React.js)</List.Item>
@@ -385,24 +237,24 @@ class App extends Component {
                     </List>
                   </Message.Content>
                 </Message>
-
                 {this.render_open_source()}
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </div>
-        {this.responsive_image('divider2')}
+        <Responsive maxWidth={this.mobileMaxWidth}>
+          <Image style={{ "textAlign": "center", "margin": "auto", "marginBottom": "2em", "marginTop": "0.5em" }} alt={"divider2"} src={`${this.imagePath}divider2_mobile.jpg`} />
+        </Responsive>
         <div className={"content"}>
-          <Grid container style={{ padding: '1em 0em' }}>
+          <Grid container >
             <Grid.Row columns={1}>
               <Grid.Column>
-
-                <Message info style={{ "marginTop": "1em" }} className={"info-text"}>
+                <Message info className={"info-text"}>
                   <Message.Header as="h1">
                     Fun
                   </Message.Header>
                   <Message.Content>
-                    <p style={{"lineHeight": "1.7"}}>
+                    <p style={{ "lineHeight": "1.7" }}>
                       We aren’t just about the work; we like to play too! Our main headquarters is in Portland, Oregon, with the Belfast office being the second biggest in the world. It's fantastic to work here - with a city centre office location; we get up to all sorts of fun activities:
                     </p>
                     <List bulleted>
