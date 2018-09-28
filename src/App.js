@@ -40,7 +40,7 @@ class App extends Component {
         <Header>
           {title}
         </Header>
-        <p className={"info-text"}>
+        <p className={"info-text"} style={{"lineHeight": "1.7" }}>
           {desc}
         </p>
         <Grid columns={1}>
@@ -100,7 +100,7 @@ class App extends Component {
     )
   }
 
-  register_mobile(title, date, desc) {
+  register_mobile(title, date, desc, desc2) {
     return (
       <div>
         <Divider />
@@ -110,8 +110,10 @@ class App extends Component {
         <p className="date">
           {date}
         </p>
-        <p className={"info-text"}>
+        <p className={"info-text"} style={{ "lineHeight": "1.7"}}>
           {desc}
+          <br/><br/>
+            {desc2}
         </p>
         <Divider section />
         <p className="date">
@@ -121,9 +123,9 @@ class App extends Component {
     )
   }
 
-  register(title, date, desc) {
+  register(title, date, desc, desc2) {
     return (
-      <Card fluid style={{ "marginTop": "2em" }}>
+      <Card fluid style={{ "marginTop": "2em"}}>
         <Card.Content>
           <Card.Header>
             {title}
@@ -133,6 +135,8 @@ class App extends Component {
             </span>
           <Card.Description className={"info-text"}>
             {desc}
+            <br/><br/>
+            {desc2}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
@@ -145,13 +149,14 @@ class App extends Component {
   render_register() {
     const title = "Puppet Open Doors"
     const date = "Date: 25th October 2018"
-    const desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun! There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click \"I'm Interested!\" and let us know if you are attending!"
+    const desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun!"
+    const desc2 = "There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click \"I'm Interested!\" and let us know if you are attending!"
     return (
       [<Responsive maxWidth={this.mobileMaxWidth}>
-        {this.register_mobile(title, date, desc)}
+        {this.register_mobile(title, date, desc, desc2)}
       </Responsive>,
       <Responsive minWidth={this.desktopMinWidth}>
-        {this.register(title, date, desc)}
+        {this.register(title, date, desc, desc2)}
       </Responsive>]
     )
   }
@@ -278,7 +283,7 @@ class App extends Component {
 
   open_source_mobile(desc) {
     return (
-      <p style={{ "marginBottom": "1em" }} className={"info-text"}>
+      <p style={{ "marginBottom": "1em", "lineHeight": "1.7" }} className={"info-text"}>
         {desc}
       </p>
     )
@@ -308,7 +313,7 @@ class App extends Component {
 
   peer_mobile(desc, desc2) {
     return (
-      <p  style={{"marginBottom": "1em" }} className={"info-text"}>
+      <p  style={{"marginBottom": "1em", "lineHeight": "1.7" }} className={"info-text"}>
         {desc}
         <br/>
         <br/>
@@ -367,7 +372,7 @@ class App extends Component {
                     Technologies
                 </Message.Header>
                   <Message.Content>
-                    <p>
+                    <p style={{"lineHeight": "1.7"}}>
                       At Puppet, you’ll gain experience with a wide range of technologies:
                 </p>
                     <List bulleted>
@@ -397,14 +402,14 @@ class App extends Component {
                     Fun
                   </Message.Header>
                   <Message.Content>
-                    <p>
+                    <p style={{"lineHeight": "1.7"}}>
                       We aren’t just about the work; we like to play too! Our main headquarters is in Portland, Oregon, with the Belfast office being the second biggest in the world. It's fantastic to work here - with a city centre office location; we get up to all sorts of fun activities:
                     </p>
                     <List bulleted>
                       <List.Item>Free lunch once a week</List.Item>
                       <List.Item>Breakfast baps on Fridays</List.Item>
                       <List.Item>Fruit, snacks</List.Item>
-                      <List.Item>Free beer (with beer tastings to choose the next batch)</List.Item>
+                      <List.Item>Free beer, cider, wine etc..</List.Item>
                       <List.Item>Lego, games consoles, board games</List.Item>
                       <List.Item>A state-of-the-art coffee machine</List.Item>
                       <List.Item>Most importantly -Pop by at our booth, the first few to say the password 'Miku' will get special freebies.</List.Item>
