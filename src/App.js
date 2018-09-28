@@ -10,10 +10,150 @@ import {
   List,
   Card,
   Responsive,
+  Divider,
 } from 'semantic-ui-react';
 
 class App extends Component {
   imagePath = process.env.PUBLIC_URL + '/assets/'
+
+  responsive_image(name) {
+    return (
+      [
+        <Responsive {...Responsive.onlyMobile}>
+          <Image style={{textAlign: "center", margin: "auto"}} alt={name} src={`${this.imagePath}${name}_mobile.jpg`} />
+        </Responsive>,
+        <Responsive {...Responsive.onlyTablet}>
+          <Image alt={name} src={`${this.imagePath}${name}_tablet.jpg`} />
+        </Responsive>,
+        <Responsive {...Responsive.onlyComputer}>
+          <Image alt={name} src={`${this.imagePath}${name}.jpg`} />
+        </Responsive>
+      ]
+    )
+  }
+
+  interested_mobile(title, desc, buttonText) {
+    return (
+      <div>
+        <Header>
+          {title}
+        </Header>
+        <p className={"info-text"}>
+          {desc}
+        </p>
+        <Grid columns={1}>
+          <Grid.Column>
+            <Button disabled color="yellow" as="a" href="">
+              {buttonText}
+            </Button>
+          </Grid.Column>
+        </Grid>
+      </div>
+    )
+  }
+
+  interested(title, desc, buttonText) {
+    return (
+      <Card fluid>
+        <Card.Content>
+          <Card.Header>
+            {title}
+          </Card.Header>
+          <Card.Description className={"info-text"}>
+            {desc}
+          </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <Grid columns={1}>
+            <Grid.Column>
+              <Button disabled color="yellow" as="a" href="">
+                {buttonText}
+              </Button>
+            </Grid.Column>
+          </Grid>
+        </Card.Content>
+      </Card>
+    )
+  }
+
+  render_interested() {
+    const title = "We think you'll like what you see."
+    const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you!"
+    const buttonText = "I'm interested!"
+    return (
+      [<Responsive maxWidth={419}>
+        {this.interested_mobile(title, desc, buttonText)}
+      </Responsive>,
+      <Responsive minWidth={420}>
+        {this.interested(title, desc, buttonText)}
+      </Responsive>]
+    )
+  }
+
+  render_map() {
+    return (
+      ["Click for map:",
+      <a style={{ color: "#4183c4" }} href="https://goo.gl/maps/7tUVkcgEHLA2"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
+      ]
+    )
+  }
+
+  register_mobile(title, date, desc) {
+    return (
+      <div>
+        <Divider />
+        <Header style={{ "marginTop": "1em" }}>
+          {title}
+        </Header>
+        <p className="date">
+          {date}
+        </p>
+        <p className={"info-text"}>
+          {desc}
+        </p>
+        <Divider section />
+        <p className="date">
+          {this.render_map()}
+        </p>
+      </div>
+    )
+  }
+
+  register(title, date, desc) {
+    return (
+      <Card fluid style={{ "marginTop": "2em" }}>
+        <Card.Content>
+          <Card.Header>
+            {title}
+            </Card.Header>
+            <span className="date">
+              {date}
+            </span>
+          <Card.Description className={"info-text"}>
+            {desc}
+          </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          {this.render_map()}
+        </Card.Content>
+      </Card>
+    )
+  }
+
+  render_register() {
+    const title = "Puppet Open Doors"
+    const date = "Date: 25th October 2018"
+    const desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun! There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click 'Sign Up' and let us know if you are attending!"
+    return (
+      [<Responsive maxWidth={419}>
+        {this.register_mobile(title, date, desc)}
+      </Responsive>,
+      <Responsive minWidth={420}>
+        {this.register(title, date, desc)}
+      </Responsive>]
+    )
+  }
+
   mobile_pups() {
     return (
       <Grid columns={2} style={{ textAlign: "center" }}>
@@ -72,64 +212,134 @@ class App extends Component {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-
     )
   }
 
   render_pups() {
     return (
-      [
-        <Responsive {...Responsive.onlyMobile}>
-          {this.mobile_pups()}
-        </Responsive>,
-        <Responsive {...Responsive.onlyTablet}>
-          {this.desktop_pups()}
-        </Responsive>,
-        <Responsive {...Responsive.onlyComputer}>
-          {this.desktop_pups()}
-        </Responsive>
-      ]
+      [<Responsive maxWidth={419}>
+        {this.mobile_pups()}
+      </Responsive>,
+      <Responsive minWidth={420}>
+        {this.desktop_pups()}
+      </Responsive>]
     )
   }
 
-  render_register(atTheTop) {
-    let desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun! There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click 'Sign Up' and let us know if you are attending!"
+  meet_team_mobile(title, desc) {
     return (
-      <Card fluid style={{ "marginTop": "2em" }}>
+      <div style={{ "marginTop": "2em" }}>
+        <Divider />
+        <Header>
+          {title}
+        </Header>
+        <p>
+          <Card.Meta>
+            {desc}
+          </Card.Meta>
+        </p>
+        <p>
+          {this.render_pups()}
+        </p>
+      </div>
+    )
+  }
+
+  meet_team(title, desc) {
+    return (
+      <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
         <Card.Content>
           <Card.Header>
-            Puppet Open Doors
-            </Card.Header>
+            {title}
+          </Card.Header>
           <Card.Meta>
-            <span className="date">
-              Date: 25th October 2018
-              </span>
-          </Card.Meta>
-          <Card.Description className={"info-text"}>
             {desc}
-          </Card.Description>
+          </Card.Meta>
         </Card.Content>
         <Card.Content extra>
-          Click for map:
-          <a style={{ color: "#4183c4" }} href="https://goo.gl/maps/7tUVkcgEHLA2"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
+          {this.render_pups()}
         </Card.Content>
       </Card>
     )
   }
 
-  responsive_image(name) {
+  render_meet_team() {
+    const title = "Meet the Team"
+    const desc = "Puppet is a dog friendly office. Miku is in most days and the others come in too from time to time."
     return (
-      [
-        <Responsive {...Responsive.onlyMobile}>
-          <Image alt={name} src={`${this.imagePath}${name}_mobile.jpg`} />
-        </Responsive>,
-        <Responsive {...Responsive.onlyTablet}>
-          <Image alt={name} src={`${this.imagePath}${name}_tablet.jpg`} />
-        </Responsive>,
-        <Responsive {...Responsive.onlyComputer}>
-          <Image alt={name} src={`${this.imagePath}${name}.jpg`} />
-        </Responsive>
-      ]
+      [<Responsive maxWidth={419}>
+        {this.meet_team_mobile(title, desc)}
+      </Responsive>,
+      <Responsive minWidth={420}>
+        {this.meet_team(title, desc)}
+      </Responsive>]
+    )
+  }
+
+  open_source_mobile(desc) {
+    return (
+      <p style={{ "marginBottom": "1em" }} className={"info-text"}>
+        {desc}
+      </p>
+    )
+  }
+
+  open_source(desc) {
+    return (
+      <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
+        <Card.Content className={"info-text"}>
+         {desc}
+        </Card.Content>
+      </Card>
+    )
+  }
+
+  render_open_source() {
+    const desc = "We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community."
+    return (
+      [<Responsive maxWidth={419}>
+        {this.open_source_mobile(desc)}
+      </Responsive>,
+      <Responsive minWidth={420}>
+        {this.open_source(desc)}
+      </Responsive>]
+    )
+  }
+
+  peer_mobile(desc, desc2) {
+    return (
+      <p  style={{"marginBottom": "1em" }} className={"info-text"}>
+        {desc}
+        <br/>
+        <br/>
+        {desc2}
+      </p>
+    )
+  }
+
+  peer(desc, desc2) {
+    return (
+      <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
+        <Card.Content className={"info-text"}>
+          {desc}
+          <br/>
+          <br/>
+          {desc2}
+        </Card.Content>
+      </Card>
+    )
+  }
+
+  render_peer() {
+    const desc = "At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer."
+    const desc2 = "You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
+    return (
+      [<Responsive maxWidth={419}>
+        {this.peer_mobile(desc, desc2)}
+      </Responsive>,
+      <Responsive minWidth={420}>
+        {this.peer(desc, desc2)}
+      </Responsive>]
     )
   }
 
@@ -143,43 +353,15 @@ class App extends Component {
           <Grid container style={{ 'padding': '1em 0em' }}>
             <Grid.Row columns={1}>
               <Grid.Column>
-                <Card fluid>
-                  <Card.Content>
-                    <Card.Header>
-                      Interested in joining us?
-                  </Card.Header>
-                    <Card.Description className={"info-text"}>
-                      If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you!
-                  </Card.Description>
-                  </Card.Content>
-                  <Card.Content extra>
-                    <Grid columns={1}>
-                      <Grid.Column>
-                        <Button disabled color="yellow" as="a" href="">
-                          Sign Up
-                      </Button>
-                      </Grid.Column>
-                    </Grid>
-                  </Card.Content>
-                </Card>
+                {this.render_interested()}
 
                 {this.render_register(false)}
 
-                <Card fluid style={{ "marginTop": "2em" }}>
-                  <Card.Content>
-                    <Card.Header>
-                      Meet the Team
-                  </Card.Header>
-                    <Card.Meta>
-                      Puppet is a dog friendly office. Miku is in most days and the others come in too from time to time.
-                  </Card.Meta>
-                  </Card.Content>
-                  <Card.Content extra>
-                    {this.render_pups()}
-                  </Card.Content>
-                </Card>
+                {this.render_meet_team()}
 
-                <Message info style={{ "marginTop": "2em" }}>
+                <Divider />
+
+                <Message info style={{ "marginTop": "1em" }} className={"info-text"}>
                   <Message.Header>
                     Technologies
                 </Message.Header>
@@ -187,7 +369,7 @@ class App extends Component {
                     <p>
                       At Puppet, you’ll gain experience with a wide range of technologies:
                 </p>
-                    <List bulleted className={"info-text"} >
+                    <List bulleted>
                       <List.Item>Cloud/Containers (Docker, AWS, GCP, Azure, OpenStack, Kubernetes)</List.Item>
                       <List.Item>Javascript (Ember.js, React.js)</List.Item>
                       <List.Item>Backend Languages (Go, Clojure)</List.Item>
@@ -198,11 +380,7 @@ class App extends Component {
                   </Message.Content>
                 </Message>
 
-                <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
-                  <Card.Content className={"info-text"}>
-                    We are also an Open Source company and working with us is an excellent way to get your name out in the Open Source community.
-                </Card.Content>
-                </Card>
+                {this.render_open_source()}
 
               </Grid.Column>
             </Grid.Row>
@@ -214,7 +392,7 @@ class App extends Component {
             <Grid.Row columns={1}>
               <Grid.Column>
 
-                <Message info style={{ "marginTop": "1em" }}>
+                <Message info style={{ "marginTop": "1em" }} className={"info-text"}>
                   <Message.Header as="h1">
                     Fun
                   </Message.Header>
@@ -222,7 +400,7 @@ class App extends Component {
                     <p>
                       We aren’t just about the work; we like to play too! Our main headquarters is in Portland, Oregon, with the Belfast office being the second biggest in the world. It's fantastic to work here - with a city centre office location; we get up to all sorts of fun activities:
                     </p>
-                    <List bulleted className={"info-text"}>
+                    <List bulleted>
                       <List.Item>Free lunch once a week</List.Item>
                       <List.Item>Breakfast baps on Fridays</List.Item>
                       <List.Item>Fruit, snacks</List.Item>
@@ -234,14 +412,7 @@ class App extends Component {
                   </Message.Content>
                 </Message>
 
-                <Card fluid style={{ "marginTop": "2em", "marginBottom": "1em" }}>
-                  <Card.Content className={"info-text"}>
-                    At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Grad/Intern you'll be placed in a team with other engineers and treated as a peer.
-                    <br />
-                    <br />
-                    You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!
-                  </Card.Content>
-                </Card>
+                {this.render_peer()}
               </Grid.Column>
             </Grid.Row>
           </Grid>
