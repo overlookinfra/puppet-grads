@@ -37,6 +37,7 @@ class App extends Component {
     const title = "We think you'll like what you see."
     const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you!"
     const buttonText = "I'm interested!"
+    const typeFormUrl = "https://puppet3.typeform.com/to/LkGUCA"
     return (
       <div>
         <Header>
@@ -47,7 +48,7 @@ class App extends Component {
         </p>
         <Grid columns={1}>
           <Grid.Column>
-            <Button disabled color="yellow" as="a" href="">
+            <Button color="yellow" as="a" href={typeFormUrl}>
               {buttonText}
             </Button>
           </Grid.Column>
