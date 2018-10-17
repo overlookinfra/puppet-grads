@@ -60,7 +60,7 @@ class App extends Component {
   render_map() {
     return (
       ["Click for map:",
-        <a style={{ color: "#4183c4" }} href="https://goo.gl/maps/7tUVkcgEHLA2"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
+        <a style={{ color: "#4183c4" }} href="https://goo.gl/maps/vfaXHAiHchm"><Icon name="map marker alternate" />Puppet Inc, 4th Floor, 40 Linenhall Street, BT2 8BA</a>
       ]
     )
   }
