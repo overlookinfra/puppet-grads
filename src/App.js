@@ -67,7 +67,7 @@ class App extends Component {
 
   render_register() {
     const title = "Puppet Open Doors"
-    const date = "Date: 25th October 2018"
+    const date = "Date: 25th October 2018 @ 6pm"
     const desc = "We are holding a Meetup for both Graduates and Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun!"
     const desc2 = "There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Graduate/Intern positions, join us for a night of exciting activities! Click \"I'm Interested!\" and let us know if you are attending!"
     return (
