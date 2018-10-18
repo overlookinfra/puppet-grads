@@ -35,7 +35,7 @@ class App extends Component {
 
   render_interested() {
     const title = "We think you'll like what you see."
-    const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you! Don't worry, if you gave us your details at a Jobs fair, then we already know your interested :-)"
+    const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you! Don't worry, if you gave us your details at a Jobs fair, then we already know you're interested :-)"
     const buttonText = "I'm interested!"
     const typeFormUrl = "https://puppet3.typeform.com/to/LkGUCA"
     return (
