@@ -263,9 +263,8 @@ class App extends Component {
                       <List.Item>Breakfast baps on Fridays</List.Item>
                       <List.Item>Fruit, snacks</List.Item>
                       <List.Item>Free beer, cider, wine etc..</List.Item>
-                      <List.Item>Lego, games consoles, board games</List.Item>
+                      <List.Item>Lego, games consoles, board games, table tennis</List.Item>
                       <List.Item>A state-of-the-art coffee machine</List.Item>
-                      <List.Item>Most importantly -Pop by at our booth, the first few to say the password 'Miku' will get special freebies.</List.Item>
                     </List>
                   </Message.Content>
                 </Message>
