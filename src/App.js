@@ -35,9 +35,7 @@ class App extends Component {
 
   render_interested() {
     const title = "We think you'll like what you see."
-    const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you! Don't worry, if you gave us your details at a Jobs fair, then we already know you're interested :-)"
-    const buttonText = "I'm interested!"
-    const typeFormUrl = "https://puppetbelfast.typeform.com/to/cRYRnN"
+    const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you! Click below to apply."
     return (
       <div>
         <Header>
@@ -48,8 +46,11 @@ class App extends Component {
         </p>
         <Grid columns={1}>
           <Grid.Column>
-            <Button color="yellow" as="a" href={typeFormUrl}>
-              {buttonText}
+            <Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1415590"}>
+              Apply for Graduate Role
+            </Button>
+            <Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
+              Apply for Internship
             </Button>
           </Grid.Column>
         </Grid>
@@ -217,7 +218,6 @@ class App extends Component {
             <Grid.Row columns={1}>
               <Grid.Column>
                 {this.render_interested()}
-                {this.render_register()}
                 {this.render_meet_team()}
                 <Divider />
                 <Message info style={{ "marginTop": "1em" }} className={"info-text"}>
