@@ -46,10 +46,10 @@ class App extends Component {
         </p>
         <Grid columns={1}>
           <Grid.Column>
-            <Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1415590"}>
+            <Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1415590"}>
               Apply for Graduate Role
             </Button>
-            <Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
+            <Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
               Apply for Internship
             </Button>
           </Grid.Column>
