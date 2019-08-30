@@ -34,8 +34,23 @@ class App extends Component {
   }
 
   render_interested() {
-    const title = "We think you'll like what you see."
-    const desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you! Click below to apply."
+    let title = "We think you'll like what you see."
+    let desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you! Click below to apply."
+    let button = (<Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
+              Apply for Placement
+            </Button>)
+
+    if (((new Date()).getTime() / 1000) <  1572307200) {
+        desc = "If you like challenges and want to apply to one of the leading automation companies in the world then we'd like to hear from you! Let us know you're interested by clicking below"
+        button = (<Button color="yellow" as="a" href={"https://puppetbelfast.typeform.com/to/Lh3oWC"}>
+            I'm interested!
+        </Button>)
+    } else if (((new Date()).getTime() / 1000) >  1572998400) {
+        button = (<Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
+            Apply for Placement
+        </Button>)
+    }
+
     return (
       <div>
         <Header>
@@ -46,12 +61,7 @@ class App extends Component {
         </p>
         <Grid columns={1}>
           <Grid.Column>
-            <Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1415590"}>
-              Apply for Graduate Role
-            </Button>
-            <Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
-              Apply for Internship
-            </Button>
+            {button}
           </Grid.Column>
         </Grid>
       </div>
@@ -274,6 +284,46 @@ class App extends Component {
             </Grid.Row>
           </Grid>
         </div>
+        <div className={"content"}>
+          <Grid container >
+            <Grid.Row columns={1}>
+              <Grid.Column>
+                <Message info className={"info-text"}>
+                  <Message.Header as="h1">
+                    Community
+                  </Message.Header>
+                  <Message.Content>
+                    <p style={{ "lineHeight": "1.7" }}>
+                      As an Open Source company we like to get involved in the community. From hosting Meetups to Charity Days. 
+                    </p>
+                    <p style={{ "lineHeight": "1.7" }}>
+                        We host a number of Meetups, including:
+                    </p>
+                    <List bulleted>
+                      <List.Item>Belfast JS</List.Item>
+                      <List.Item>Women Who Code</List.Item>
+                      <List.Item>GDG</List.Item>
+                      <List.Item>Django Girls</List.Item>
+                      <List.Item>Women Tech Space</List.Item>
+                    </List>
+                    <p style={{ "lineHeight": "1.7" }}>
+                        We also get a number of days a year free to volunteer for charities. Over last few years we have helped the likes of:
+                    </p>
+                    <List bulleted>
+                      <List.Item>Carers NI</List.Item>
+                      <List.Item>Homeless Period</List.Item>
+                      <List.Item>MacMillan</List.Item>
+                      <List.Item>Pride</List.Item>
+                      <List.Item>SOS Bus NI</List.Item>
+                    </List>
+                  </Message.Content>
+                </Message>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </div>
+        <br/>
+        <br/>
         {this.responsive_image('divider3')}
       </div>
     );
