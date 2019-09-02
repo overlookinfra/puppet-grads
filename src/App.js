@@ -35,13 +35,13 @@ class App extends Component {
 
   render_interested() {
     let title = "We think you'll like what you see."
-    let desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of the internship, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed!! Click below to apply."
+    let desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of their placement year, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed!! Click below to apply."
     let button = (<Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
               Apply for Placement
             </Button>)
 
     if (((new Date()).getTime() / 1000) <  1572307200) {
-        desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of the internship, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed! Let us know you're interested by clicking below"
+        desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of their placement year, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed! Let us know you're interested by clicking below"
         button = (<Button color="yellow" as="a" href={"https://puppetbelfast.typeform.com/to/Lh3oWC"}>
             I'm interested!
         </Button>)
@@ -80,7 +80,7 @@ class App extends Component {
     const title = "Puppet Open Doors"
     const date = "Date: 29th October 2019 @ 6pm"
     const desc = "We are holding a Meetup for Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun!"
-    const desc2 = "There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in the Intern position, join us for a night of exciting activities! If we don't already have your details, Click \"I'm Interested!\" and let us know if you are attending!"
+    const desc2 = "There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in a placement year, join us for a night of exciting activities! If we don't already have your details, Click \"I'm Interested!\" and let us know if you are attending!"
     return (
       <div className={"ui-section"}>
         <Divider />
@@ -186,7 +186,7 @@ class App extends Component {
   }
 
   render_learning() {
-    const desc = "As an intern you won't be expected to know most of the technologies above. The main thing we will expect of you as an intern is to learn. You will be paired with a mentor to help you get farmiliar with these technologies. You will also have your team to support you and help you reach your potential as an engineer."
+    const desc = "As an intern you won't be expected to know most of the technologies above. The main thing we will expect of you as a placement student is to learn. You will be paired with a mentor to help you get farmiliar with these technologies. You will also have your team to support you and help you reach your potential as an engineer."
     return (
       <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
         {desc}
@@ -319,13 +319,14 @@ class App extends Component {
                     </List>
                   </Message.Content>
                 </Message>
+                <br/>
+                <p className={"info-text ui-section"}>
+                    If you'd like to read more about working at puppet, one of our previous interns, Kezie, has written about it on our <a href="https://puppet.com/blog/lessons-year-puppet">blog</a>.
+                </p>
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <br/>
-            <p className={"info-text ui-section"}>
-                If you'd like to read more about working at puppet, one of our previous interns, Kezie, has written about it on our <a href="https://puppet.com/blog/lessons-year-puppet">blog</a>.
-            </p>
+          
         </div>
         
         <br/>
