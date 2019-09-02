@@ -186,7 +186,7 @@ class App extends Component {
   }
 
   render_learning() {
-    const desc = "As an intern you won't be expected to know most of the technologies above. The main thing we will expect of you as a placement student is to learn. You will be paired with a mentor to help you get farmiliar with these technologies. You will also have your team to support you and help you reach your potential as an engineer."
+    const desc = "As an intern you won't be expected to know most of the technologies above. The main thing we will expect of you as a placement student is to learn. You will be paired with a mentor to help you get familiar with these technologies. You will also have your team to support you and help you reach your potential as an engineer."
     return (
       <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
         {desc}
