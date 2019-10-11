@@ -10,6 +10,7 @@ import {
   List,
   Responsive,
   Divider,
+  Card
 } from 'semantic-ui-react';
 
 class App extends Component {
@@ -37,17 +38,17 @@ class App extends Component {
     let title = "We think you'll like what you see."
     let desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of their placement year, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed!! Click below to apply."
     let button = (<Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
-              Apply for Placement
+      Apply for Placement
             </Button>)
 
-    if (((new Date()).getTime() / 1000) <  1572307200) {
-        desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of their placement year, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed! Let us know you're interested by clicking below"
-        button = (<Button color="yellow" as="a" href={"https://puppetbelfast.typeform.com/to/Lh3oWC"}>
-            I'm interested!
+    if (((new Date()).getTime() / 1000) < 1572307200) {
+      desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of their placement year, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed! Let us know you're interested by clicking below"
+      button = (<Button color="yellow" as="a" href={"https://puppetbelfast.typeform.com/to/Lh3oWC"}>
+        I'm interested!
         </Button>)
-    } else if (((new Date()).getTime() / 1000) >  1572998400) {
-        button = (<Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
-            Apply for Placement
+    } else if (((new Date()).getTime() / 1000) > 1572998400) {
+      button = (<Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
+        Apply for Placement
         </Button>)
     }
 
@@ -79,44 +80,47 @@ class App extends Component {
   render_register() {
     const title = "Puppet Open Doors"
     const date = "Date: 29th October 2019 @ 6pm"
-    const desc = "We are holding a Meetup for Interns to get a feel for Puppet and to experience how we work here. Eat pizza, drink beer (including non-alcoholic drinks), and more importantly, have fun!"
-    const desc2 = "There are plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying Computer Science or Software Engineering and are interested in a placement year, join us for a night of exciting activities! If we don't already have your details, Click \"I'm Interested!\" and let us know if you are attending!"
-    return (
-      <div className={"ui-section"}>
-        <Divider />
-        <Header style={{ "marginTop": "1em" }}>
-          {title}
-        </Header>
-        <p className="date">
-          {date}
-        </p>
-        <p className={"info-text"} style={{ "lineHeight": "1.7" }}>
-          {desc}
-          <br /><br />
-          {desc2}
-        </p>
-        <Divider section />
-        <p className="date">
-          {this.render_map()}
-        </p>
-      </div>
-    )
+    const desc = "We are holding an open night Meetup for Interns to get a feel for Puppet and to experience how we work here, enjoy some drinks and pizza"
+    const desc2 = "There will be plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying computing or a software related degree and are interested in a placement year, join to meet the team and find out more about working for Puppet! If we don't already have your details, Click \"I'm Interested!\" and let us know if you are attending!"
+    if (((new Date()).getTime() / 1000) < 1572998400) {
+      return (
+        <div className={"ui-section"}>
+          <Divider />
+          <Header style={{ "marginTop": "1em" }}>
+            {title}
+          </Header>
+          <p className="date">
+            {date}
+          </p>
+          <p className={"info-text"} style={{ "lineHeight": "1.7" }}>
+            {desc}
+            <br /><br />
+            {desc2}
+          </p>
+          <Divider section />
+          <p className="date">
+            {this.render_map()}
+          </p>
+        </div>
+      )
+    }
+
   }
 
   mobile_pups() {
     const availableDogImages = ['miku_needs_you.jpg', 'rosie.jpg', 'poppy.jpg', 'betty.jpg', 'kula.jpg', 'darwin.jpg']
     let selectedDogImages = []
-    for(var i = availableDogImages.length-1;i>=4;i--){
-        const dog = availableDogImages.splice(Math.floor(Math.random()*availableDogImages.length), 1)
-        selectedDogImages.push(dog)
+    for (var i = availableDogImages.length - 1; i >= 4; i--) {
+      const dog = availableDogImages.splice(Math.floor(Math.random() * availableDogImages.length), 1)
+      selectedDogImages.push(dog)
     }
 
     const dogOutput = selectedDogImages.map((dog) => {
-        return (
-            <Grid.Column>
-            <Image src={`${this.imagePath}${dog}`} />
-          </Grid.Column>
-        )
+      return (
+        <Grid.Column>
+          <Image src={`${this.imagePath}${dog}`} />
+        </Grid.Column>
+      )
     })
 
     return (
@@ -132,17 +136,17 @@ class App extends Component {
   desktop_pups() {
     const availableDogImages = ['miku_needs_you.jpg', 'rosie.jpg', 'poppy.jpg', 'betty.jpg', 'kula.jpg', 'darwin.jpg']
     let selectedDogImages = []
-    for(var i = availableDogImages.length-1;i>=3;i--){
-        const dog = availableDogImages.splice(Math.floor(Math.random()*availableDogImages.length), 1)
-        selectedDogImages.push(dog)
+    for (var i = availableDogImages.length - 1; i >= 3; i--) {
+      const dog = availableDogImages.splice(Math.floor(Math.random() * availableDogImages.length), 1)
+      selectedDogImages.push(dog)
     }
 
     const dogOutput = selectedDogImages.map((dog) => {
-        return (
-            <Grid.Column>
-            <Image src={`${this.imagePath}${dog}`} />
-          </Grid.Column>
-        )
+      return (
+        <Grid.Column>
+          <Image src={`${this.imagePath}${dog}`} />
+        </Grid.Column>
+      )
     })
 
     return (
@@ -216,7 +220,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.responsive_image('divider1')}
-        <Header as="h1" style={{ "paddingBottom": "1em"}} dividing>Welcome to Puppet</Header>
+        <Header as="h1" style={{ "paddingBottom": "1em" }} dividing>Welcome to Puppet</Header>
         <br />
         <div className={"content"}>
           <Grid container style={{ 'padding': '1em 0em' }}>
@@ -243,7 +247,7 @@ class App extends Component {
                       <List.Item>DevOps and Configuration Management </List.Item>
                     </List>
                     <p style={{ "lineHeight": "1.7" }}>
-                      You will also learn about agile methodologies and gain experience working in an agile environment. 
+                      You will also learn about agile methodologies and gain experience working in an agile environment.
                     </p>
                   </Message.Content>
                 </Message>
@@ -274,7 +278,7 @@ class App extends Component {
                       <List.Item>Free beer, cider, wine etc..</List.Item>
                       <List.Item>Lego, games consoles, board games, table tennis</List.Item>
                       <List.Item>A state-of-the-art coffee machine</List.Item>
-                      <List.Item>Regular work events, such as trips to "Let's go Hydro!" and BBQs</List.Item>
+                      <List.Item>Regular social events, such as trips to "Let's go Hydro!" and BBQs</List.Item>
                     </List>
                   </Message.Content>
                 </Message>
@@ -294,10 +298,10 @@ class App extends Component {
                   </Message.Header>
                   <Message.Content>
                     <p style={{ "lineHeight": "1.7" }}>
-                      As an Open Source company we like to get involved in the community. From hosting Meetups to Charity Days. 
+                      As an Open Source company we like to get involved in the community. From hosting Meetups to Charity Days.
                     </p>
                     <p style={{ "lineHeight": "1.7" }}>
-                        We host a number of Meetups, including:
+                      We host a number of Meetups, including:
                     </p>
                     <List bulleted>
                       <List.Item>Belfast JS</List.Item>
@@ -308,7 +312,7 @@ class App extends Component {
                       <List.Item>OWASP Belfast</List.Item>
                     </List>
                     <p style={{ "lineHeight": "1.7" }}>
-                        We also get a number of days a year free to volunteer for charities. Over last few years we have helped the likes of:
+                      We also get a number of days a year free to volunteer for charities. Over last few years we have helped the likes of:
                     </p>
                     <List bulleted>
                       <List.Item>Carers NI</List.Item>
@@ -319,18 +323,49 @@ class App extends Component {
                     </List>
                   </Message.Content>
                 </Message>
-                <br/>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={1}>
+              <Grid.Column>
+                <Divider />
+                <Header  style={{textAlign: "left"}}>
+                  {"Testimonials"}
+                </Header>
+                <p style={{textAlign: "left"}}>
+                  {"Don’t just take our word for it.  This is what some of our previous interns had to say about their experience as an intern in Puppet, Belfast:"}
+                </p>
+                <Card fluid className={"info-text"}>
+                  <Card.Content>
+                    <p style={{ "lineHeight": "1.7" }}>
+                      <i>"Working at Puppet has given me the confidence that I have the ability to be able to complete final year. I now have great friends and mentors that I feel like I can go to if I need help with anything.”</i>
+                    </p>
+                  </Card.Content>
+                  <Card.Content extra>
+                  <strong>Claudia</strong>, now in final year at uni, due to return to Puppet in a permanent role in Summer 2020.
+                  </Card.Content>
+                </Card>
+                <Card fluid className={"info-text"}>
+                  <Card.Content>
+                    <p style={{ "lineHeight": "1.7" }}>
+                      <i>“Right from day one I was part of a development team implementing Puppets new products. I got the help and support needed to improve my software engineering skills in areas such as application development, web development, testing and tooling.  As a result of my time in Puppet I have become involved in the local IT culture in belfast and overall have become a much more confident engineer.”</i> 
+                    </p>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <strong>Luke</strong>, now a permanent employee at Puppet
+                  </Card.Content>
+                </Card>
+                <br />
                 <p className={"info-text ui-section"}>
-                    If you'd like to read more about working at puppet, one of our previous interns, Kezie, has written about it on our <a href="https://puppet.com/blog/lessons-year-puppet">blog</a>.
+                  If you'd like to read more about working at puppet, one of our previous interns, Kezie, has written about it on our <a href="https://puppet.com/blog/lessons-year-puppet">blog</a>.
                 </p>
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          
+
         </div>
-        
-        <br/>
-        <br/>
+
+        <br />
+        <br />
         {this.responsive_image('divider3')}
       </div>
     );
