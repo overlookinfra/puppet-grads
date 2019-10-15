@@ -198,11 +198,83 @@ class App extends Component {
     )
   }
 
+  mobile_office() {
+    const availableOfficeImages = ['office_img_1.jpg', 'office_img_2.jpg', 'office_img_3.jpg', 'office_img_4.jpg', 'office_img_5.jpg', 'office_img_6.jpg', 'office_img_7.jpg', 'office_img_8.jpg']
+    let selectedOfficeImages = []
+    for (var i = availableOfficeImages.length - 1; i >= 6; i--) {
+      const dog = availableOfficeImages.splice(Math.floor(Math.random() * availableOfficeImages.length), 1)
+      selectedOfficeImages.push(dog)
+    }
+
+    const officeOutput = selectedOfficeImages.map((office) => {
+      return (
+        <Grid.Column>
+          <Image src={`${this.imagePath}${office}`} />
+        </Grid.Column>
+      )
+    })
+
+    return (
+      <Grid columns={2} divided style={{ textAlign: "center" }}>
+        <Grid.Row>
+          {officeOutput}
+        </Grid.Row>
+      </Grid>
+    )
+  }
+
+  desktop_office() {
+    const availableOfficeImages = ['office_img_1.jpg', 'office_img_2.jpg', 'office_img_3.jpg', 'office_img_4.jpg', 'office_img_5.jpg', 'office_img_6.jpg', 'office_img_7.jpg', 'office_img_8.jpg']
+    let selectedOfficeImages = []
+    for (var i = availableOfficeImages.length - 1; i >= 5; i--) {
+      const dog = availableOfficeImages.splice(Math.floor(Math.random() * availableOfficeImages.length), 1)
+      selectedOfficeImages.push(dog)
+    }
+
+    const officeOutput = selectedOfficeImages.map((office) => {
+      return (
+        <Grid.Column>
+          <Image src={`${this.imagePath}${office}`} />
+        </Grid.Column>
+      )
+    })
+
+    return (
+      <Grid columns={3} divided style={{ textAlign: "center" }}>
+        <Grid.Row>
+          {officeOutput}
+        </Grid.Row>
+      </Grid>
+    )
+  }
+
+  render_office_images() {
+    return (
+      [<Responsive maxWidth={this.mobileMaxWidth}>
+        {this.mobile_office()}
+      </Responsive>,
+      <Responsive minWidth={this.desktopMinWidth}>
+        {this.desktop_office()}
+      </Responsive>]
+    )
+  }
+
+  render_activity_images() {
+    return (
+      <div style={{ "marginTop": "2em", "textAlign": "left" }} className={"ui-section"}>
+        <p>
+          {this.render_office_images()}
+        </p>
+        <br />
+      </div>
+    )
+  }
+
   render_peer() {
     const desc = "At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Intern you'll be placed in a team with other engineers and treated as a peer."
     const desc2 = "You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
     return (
-      <p style={{ "marginBottom": "1em", "lineHeight": "1.7" }} className={"info-text ui-section"}>
+      <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
         {desc}
         <br />
         <br />
@@ -252,6 +324,7 @@ class App extends Component {
                   </Message.Content>
                 </Message>
                 {this.render_learning()}
+                {this.render_peer()}
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -282,12 +355,12 @@ class App extends Component {
                     </List>
                   </Message.Content>
                 </Message>
-
-                {this.render_peer()}
+                {this.render_activity_images()}
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </div>
+
         <div className={"content"}>
           <Grid container >
             <Grid.Row columns={1}>
@@ -327,11 +400,10 @@ class App extends Component {
             </Grid.Row>
             <Grid.Row columns={1}>
               <Grid.Column>
-                <Divider />
-                <Header  style={{textAlign: "left"}}>
+                <Header style={{ textAlign: "left" }}>
                   {"Testimonials"}
                 </Header>
-                <p style={{textAlign: "left"}}>
+                <p style={{ textAlign: "left" }}>
                   {"Don’t just take our word for it.  This is what some of our previous interns had to say about their experience as an intern in Puppet, Belfast:"}
                 </p>
                 <Card fluid className={"info-text"}>
@@ -341,13 +413,13 @@ class App extends Component {
                     </p>
                   </Card.Content>
                   <Card.Content extra>
-                  <strong>Claudia</strong>, now in final year at uni, due to return to Puppet in a permanent role in Summer 2020.
+                    <strong>Claudia</strong>, now in final year at uni, due to return to Puppet in a permanent role in Summer 2020.
                   </Card.Content>
                 </Card>
                 <Card fluid className={"info-text"}>
                   <Card.Content>
                     <p style={{ "lineHeight": "1.7" }}>
-                      <i>“Right from day one I was part of a development team implementing Puppets new products. I got the help and support needed to improve my software engineering skills in areas such as application development, web development, testing and tooling.  As a result of my time in Puppet I have become involved in the local IT culture in belfast and overall have become a much more confident engineer.”</i> 
+                      <i>“Right from day one I was part of a development team implementing Puppets new products. I got the help and support needed to improve my software engineering skills in areas such as application development, web development, testing and tooling.  As a result of my time in Puppet I have become involved in the local IT culture in belfast and overall have become a much more confident engineer.”</i>
                     </p>
                   </Card.Content>
                   <Card.Content extra>
