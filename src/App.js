@@ -36,13 +36,13 @@ class App extends Component {
 
   render_interested() {
     let title = "We think you'll like what you see."
-    let desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of their placement year, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed!! Click below to apply."
+    let desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you!<br/> <br/>Here at Puppet we pride ourselves in creating a kick-ass culture to help students like you to start out strong in your software career. With each placement we aim to provide the opportunity of a future full-time job after graduation. Click below to apply."
     let button = (<Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1405357"}>
       Apply for Placement
             </Button>)
 
     if (((new Date()).getTime() / 1000) < 1572307200) {
-      desc = "We offer a robust program that places interns directly on teams to collaborate on projects, while also providing on-the-job training to equip you with the tools and knowledge to be successful. Our goal is to convert most of our interns into full-time, graduate-level positions at the end of their placement year, so each intern is assigned a manager and mentor to ensure that you have the support and guidance needed! Let us know you're interested by clicking below"
+      desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you!<br/> <br/>Here at Puppet we pride ourselves in creating a kick-ass culture to help students like you to start out strong in your software career. With each placement we aim to provide the opportunity of a future full-time job after graduation. Let us know you're interested by clicking below"
       button = (<Button color="yellow" as="a" href={"https://puppetbelfast.typeform.com/to/Lh3oWC"}>
         I'm interested!
         </Button>)
@@ -190,7 +190,7 @@ class App extends Component {
   }
 
   render_learning() {
-    const desc = "As an intern you won't be expected to know most of the technologies above. The main thing we will expect of you as a placement student is to learn. You will be paired with a mentor to help you get familiar with these technologies. You will also have your team to support you and help you reach your potential as an engineer."
+    const desc = "As an intern you won't be required to know most of the technologies above. The main thing we will expect of you as a placement student is to learn. You will be paired with a mentor to help you get familiar with these technologies. You will also have your team to support you and help you reach your potential as an engineer."
     return (
       <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
         {desc}
@@ -271,7 +271,7 @@ class App extends Component {
   }
 
   render_peer() {
-    const desc = "At Puppet you aren't just put in the corner and expected to make Tea for the senior engineers. As a Intern you'll be placed in a team with other engineers and treated as a peer."
+    const desc = "At Puppet you aren't just put in the corner and expected to make coffee for the senior engineers. As a Intern you'll be placed in a team with other engineers and treated as a peer."
     const desc2 = "You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
     return (
       <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
@@ -385,7 +385,7 @@ class App extends Component {
                       <List.Item>OWASP Belfast</List.Item>
                     </List>
                     <p style={{ "lineHeight": "1.7" }}>
-                      We also get a number of days a year free to volunteer for charities. Over last few years we have helped the likes of:
+                    We also get a number of volunteering days for charities. Over the last few years we have helped the likes of:
                     </p>
                     <List bulleted>
                       <List.Item>Carers NI</List.Item>
