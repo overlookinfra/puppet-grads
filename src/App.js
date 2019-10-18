@@ -80,7 +80,7 @@ class App extends Component {
   render_register() {
     const title = "Puppet Open Doors"
     const date = "Date: 29th October 2019 @ 6pm"
-    const desc = "We are holding an open night Meetup for Interns to get a feel for Puppet and to experience how we work here, enjoy some drinks and pizza"
+    const desc = "We are holding an open night Meetup for Interns to get a feel for Puppet and to experience how we work here, enjoy some drinks and pizza."
     const desc2 = "There will be plenty of fellow engineers around for a chat, and we do not believe in stupid questions here :) If you are currently studying computing or a software related degree and are interested in a placement year, join to meet the team and find out more about working for Puppet! If we don't already have your details, Click \"I'm Interested!\" and let us know if you are attending!"
     if (((new Date()).getTime() / 1000) < 1572998400) {
       return (
