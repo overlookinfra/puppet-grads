@@ -170,8 +170,8 @@ class App extends Component {
   }
 
   // choose 3 dogs at random
-  render_meet_team() {
-    const title = "Meet the Team"
+  render_meet_dogs() {
+    const title = "Meet the dogs"
     const desc = "Puppet is a dog friendly office. These are some of the pups that might come in from time to time."
     return (
       <div style={{ "marginTop": "2em" }} className={"ui-section"}>
@@ -273,12 +273,16 @@ class App extends Component {
   render_peer() {
     const desc = "At Puppet you aren't just put in the corner and expected to make coffee for the senior engineers. As a Intern you'll be placed in a team with other engineers and treated as a peer."
     const desc2 = "You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
+    const descGrad = "As a graduate we know you will have some great experience already and are eager to gain more. Working in Puppet alongside engineers with a wide range of experience will allow you to not only work on up to date technologies but also learn from your team around you how to develop, test and deploy production quality applications used by our customers across the globe"
     return (
       <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
         {desc}
         <br />
         <br />
         {desc2}
+        <br />
+        <br />
+        {descGrad}
       </p>
     )
   }
@@ -300,7 +304,7 @@ class App extends Component {
               <Grid.Column>
                 {this.render_interested()}
                 {this.render_register()}
-                {this.render_meet_team()}
+                {this.render_meet_dogs()}
                 <Divider />
                 <Message info style={{ "marginTop": "1em" }} className={"info-text"}>
                   <Message.Header>
@@ -393,6 +397,32 @@ class App extends Component {
                       <List.Item>MacMillan</List.Item>
                       <List.Item>Pride</List.Item>
                       <List.Item>SOS Bus NI</List.Item>
+                    </List>
+                  </Message.Content>
+                </Message>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={1}>
+              <Grid.Column>
+                <Message info className={"info-text"}>
+                  <Message.Header as="h1">
+                    Office
+                  </Message.Header>
+                  <Message.Content>
+                    <p style={{ "lineHeight": "1.7" }}>
+                      Our office these days takes on many different guises due to COVID-19! Currently we are working in a fully remote mode so your office could be your kitchen, bedroom, home office or even a shed in the garden. Working remotely is something we have all been doing lately but when conditions are right we will reopen the office and have it as an option to work from again. For now we are fully remote to protect the welfare of our employees and those around us but we aim to move to a hybrid model in the future to support remote and office working. 
+                    </p>
+                    <p style={{ "lineHeight": "1.7" }}>
+                      Working from home has advantages but the office also has a lot to offer when it is safe to return:
+                    </p>
+                    <List bulleted>
+                      <List.Item>Great city center location</List.Item>
+                      <List.Item>Stylish office design</List.Item>
+                      <List.Item>Free drinks (including beer, wine, cider) and snacks</List.Item>
+                      <List.Item>Generous kitchen/chill out area to work from</List.Item>
+                      <List.Item>Xbox, Playstation, Wii</List.Item>
+                      <List.Item>Table tennis - there are quite a few competitive players in the office :)</List.Item>
+                      <List.Item>Guitar, ukulele - quietly strum a few chords to relax</List.Item>
                     </List>
                   </Message.Content>
                 </Message>
