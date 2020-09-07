@@ -36,13 +36,13 @@ class App extends Component {
 
   render_interested() {
     let title = "We think you'll like what you see."
-    let desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you! Here at Puppet we pride ourselves in creating a kick-ass culture to help you to start out strong in your software career. We'd love to hear from Graduates and Placement students (with each placement we aim to provide the opportunity of a future full-time job after graduation). Click below to apply for a placement or graduate role."
+    let desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you! Here at Puppet we pride ourselves in creating a kick-ass culture to help you to start out strong in your software career. We'd love to hear from Graduates and Placement students, click below to apply for a placement or graduate role."
     let button = (<Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1868369"}>
       Apply for Placement
             </Button>)
 
     if (((new Date()).getTime() / 1000) < 1572307200) {
-      desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you! Here at Puppet we pride ourselves in creating a kick-ass culture to help you to start out strong in your software career. We'd love to hear from Graduates and Placement students (with each placement we aim to provide the opportunity of a future full-time job after graduation). Let us know you're interested by clicking below"
+      desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you! Here at Puppet we pride ourselves in creating a kick-ass culture to help you to start out strong in your software career. We'd love to hear from Graduates and Placement students, let us know you're interested by clicking below"
       button = (<Button color="yellow" as="a" href={"https://puppetbelfast.typeform.com/to/Lh3oWC"}>
         I'm interested!
         </Button>)
@@ -271,15 +271,11 @@ class App extends Component {
   }
 
   render_peer() {
-    const desc = "At Puppet you aren't just put in the corner and expected to make coffee for the senior engineers. As a Intern you'll be placed in a team with other engineers and treated as a peer."
-    const desc2 = "You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
-    const descGrad = "As a graduate we know you will have some great experience already and are eager to gain more. Working in Puppet alongside engineers with a wide range of experience will allow you to not only work on up to date technologies but also learn from your team around you how to develop, test and deploy production quality applications used by our customers across the globe"
+    const desc = "As a Intern you'll be placed in a team with other engineers and treated as a peer. You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
+    const descGrad = "As a graduate we know you will have some great experience already and are eager to gain more. Working in Puppet alongside engineers with a wide range of experience will allow you to not only work on up to date technologies but also learn from your team around you how to develop, test and deploy production quality applications used by our customers across the globe. You'll have all the support you need and can grow your skillset and expertise in a supportive environment"
     return (
       <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
         {desc}
-        <br />
-        <br />
-        {desc2}
         <br />
         <br />
         {descGrad}
