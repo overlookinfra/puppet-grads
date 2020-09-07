@@ -190,7 +190,7 @@ class App extends Component {
   }
 
   render_learning() {
-    const desc = "As an intern you won't be required to know most of the technologies above. The main thing we will expect of you as a placement student is to learn. You will be paired with a mentor to help you get familiar with these technologies. You will also have your team to support you and help you reach your potential as an engineer."
+    const desc = "As an intern you won't be required to know most of the technologies above. The main thing we will expect of you as a placement student is to learn. You will be paired with a mentor to help you get familiar with these technologies. You will also have your team to support you and help you reach your potential as an engineer. You'll be treated as a peer and work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
     return (
       <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
         {desc}
@@ -271,13 +271,9 @@ class App extends Component {
   }
 
   render_peer() {
-    const desc = "As a Intern you'll be placed in a team with other engineers and treated as a peer. You'll work on real projects - it's hard work, but if you fancy the challenge we'd like to hear from you!"
     const descGrad = "As a graduate we know you will have some great experience already and are eager to gain more. Working in Puppet alongside engineers with a wide range of experience will allow you to not only work on up to date technologies but also learn from your team around you how to develop, test and deploy production quality applications used by our customers across the globe. You'll have all the support you need and can grow your skillset and expertise in a supportive environment"
     return (
       <p style={{ "lineHeight": "1.7" }} className={"info-text ui-section"}>
-        {desc}
-        <br />
-        <br />
         {descGrad}
       </p>
     )
