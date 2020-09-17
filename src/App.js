@@ -338,16 +338,12 @@ class App extends Component {
                   </Message.Header>
                   <Message.Content>
                     <p style={{ "lineHeight": "1.7" }}>
-                      We aren’t just about the work; we like to play too! Our main headquarters is in Portland, Oregon, with the Belfast office being the second biggest in the world. It's fantastic to work here - with a city centre office location; we get up to all sorts of fun activities:
+                      We aren’t just about the work; we like to play too! Our main headquarters are in Portland, Oregon, with the Belfast office being the second biggest in the world. It's fantastic to work here - with a city centre office location; we get up to all sorts of fun activities:
                     </p>
                     <List bulleted>
-                      <List.Item>Free lunch once a week</List.Item>
-                      <List.Item>Breakfast baps on Fridays</List.Item>
-                      <List.Item>Fruit, snacks</List.Item>
-                      <List.Item>Free beer, cider, wine etc..</List.Item>
                       <List.Item>Lego, games consoles, board games, table tennis</List.Item>
-                      <List.Item>A state-of-the-art coffee machine</List.Item>
                       <List.Item>Regular social events, such as trips to "Let's go Hydro!" and BBQs</List.Item>
+                      <List.Item>No matter if we are working from home or in the office we are still a social bunch</List.Item>
                     </List>
                   </Message.Content>
                 </Message>
@@ -410,7 +406,8 @@ class App extends Component {
                     <List bulleted>
                       <List.Item>Great city center location</List.Item>
                       <List.Item>Stylish office design</List.Item>
-                      <List.Item>Free drinks (including beer, wine, cider) and snacks</List.Item>
+                      <List.Item>Free drinks (including beer, wine, cider)</List.Item>
+                      <List.Item>Lunches, breakfast, snacks and drinks are provided in the office</List.Item>
                       <List.Item>Generous kitchen/chill out area to work from</List.Item>
                       <List.Item>Xbox, Playstation, Wii</List.Item>
                       <List.Item>Table tennis - there are quite a few competitive players in the office :)</List.Item>
@@ -435,7 +432,7 @@ class App extends Component {
                     </p>
                   </Card.Content>
                   <Card.Content extra>
-                    <strong>Claudia</strong>, now in final year at uni, due to return to Puppet in a permanent role in Summer 2020.
+                    <strong>Claudia</strong>, a previous intern and now a permanent employee at Puppet
                   </Card.Content>
                 </Card>
                 <Card fluid className={"info-text"}>
@@ -445,12 +442,12 @@ class App extends Component {
                     </p>
                   </Card.Content>
                   <Card.Content extra>
-                    <strong>Luke</strong>, now a permanent employee at Puppet
+                    <strong>Luke</strong>, a previous intern and now also permanent employee at Puppet
                   </Card.Content>
                 </Card>
                 <br />
                 <p className={"info-text ui-section"}>
-                  If you'd like to read more about working at puppet, one of our previous interns, Kezie, has written about it on our <a href="https://puppet.com/blog/lessons-year-puppet">blog</a>.
+                  If you'd like to read more about working at Puppet, Kezie (one of our previous interns and now a permanent employee) has written about it on our <a href="https://puppet.com/blog/lessons-year-puppet">blog</a>.
                 </p>
               </Grid.Column>
             </Grid.Row>
