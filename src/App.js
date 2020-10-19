@@ -36,19 +36,26 @@ class App extends Component {
 
   render_interested() {
     let title = "We think you'll like what you see."
-    let desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you! Here at Puppet we pride ourselves in creating a kick-ass culture to help you to start out strong in your software career. We'd love to hear from you if you are interested in applying for an Intern Software Engineer role for your Placement year, or if you are a Graduate or have relevant experience we also have an Associate Software Engineer role, click below to apply."
-    let button = (<Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1868369"}>
-      Apply for Placement
-            </Button>)
+    let desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you! Here at Puppet we pride ourselves in creating a kick-ass culture to help you to start out strong in your software career. We'd love to hear from you if you are interested in applying for an Intern Software Engineer role for your Placement year, or if you are a Graduate or have relevant experience we also have an Associate Software Engineer role. Click below to apply!"
+    let buttons = (
+      <div>
+        <Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs/2367090"}>Apply for Intern Software Engineer role</Button>
+        <Button color="yellow" as="a" href={"https://puppet.com/company/careers/jobs/2386263"}>Apply for Associate Software Engineer role</Button>
+      </div>
+    )
 
     if (((new Date()).getTime() / 1000) < 1572307200) {
-      button = (<Button color="yellow" as="a" href={"https://puppetbelfast.typeform.com/to/Lh3oWC"}>
+      desc = "If you like unique opportunities, want to grow your knowledge and work with cutting edge software then we’d like to hear from you! Here at Puppet we pride ourselves in creating a kick-ass culture to help you to start out strong in your software career. We'd love to hear from Graduates and Placement students, let us know you're interested by clicking below"
+      buttons = (<Button color="yellow" as="a" href={"https://puppetbelfast.typeform.com/to/Lh3oWC"}>
         I'm interested!
         </Button>)
-    } else if (((new Date()).getTime() / 1000) > 1572998400) {
-      button = (<Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs?gh_jid=1868369"}>
-        Apply for Placement
-        </Button>)
+    } else if (((new Date()).getTime() / 1000) > 1604707199) {
+      buttons = (
+        <div>
+          <Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs/2367090"}>Apply for Intern Software Engineer role</Button>
+          <Button disabled color="yellow" as="a" href={"https://puppet.com/company/careers/jobs/2386263"}>Apply for Associate Software Engineer role</Button>
+        </div>
+      )
     }
 
     return (
@@ -61,7 +68,7 @@ class App extends Component {
         </p>
         <Grid columns={1}>
           <Grid.Column>
-            {button}
+            {buttons}
           </Grid.Column>
         </Grid>
       </div>
@@ -287,7 +294,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.responsive_image('divider1')}
-        <Header as="h1" style={{ "paddingBottom": "1em" }} dividing>Welcome to Puppet</Header>
+        <Header as="h1" style={{ "paddingBottom": "1em" }} dividing>Welcome to <a href="https://puppet.com/">Puppet</a></Header>
         <br />
         <div className={"content"}>
           <Grid container style={{ 'padding': '1em 0em' }}>
@@ -295,7 +302,6 @@ class App extends Component {
               <Grid.Column>
                 {this.render_interested()}
                 {this.render_register()}
-                {this.render_meet_dogs()}
                 <Divider />
                 <Message info style={{ "marginTop": "1em" }} className={"info-text"}>
                   <Message.Header>
@@ -320,6 +326,7 @@ class App extends Component {
                 </Message>
                 {this.render_learning()}
                 {this.render_peer()}
+                {this.render_meet_dogs()}
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -421,6 +428,7 @@ class App extends Component {
                 <Header style={{ textAlign: "left" }}>
                   {"Testimonials"}
                 </Header>
+                <iframe title="intern-grad-video" src="https://drive.google.com/file/d/1xvDGXTxUgrcgbexLr_mNAcgMM-2aWDlq/preview" width="640" height="360" style={{ marginBottom: "12px" }}></iframe>
                 <p style={{ textAlign: "left" }}>
                   {"Don’t just take our word for it.  This is what some of our previous interns had to say about their experience as an intern in Puppet, Belfast:"}
                 </p>
@@ -446,7 +454,16 @@ class App extends Component {
                 </Card>
                 <br />
                 <p className={"info-text ui-section"}>
-                  If you'd like to read more about working at Puppet, Kezie (one of our previous interns and now a permanent employee) has written about it on our <a href="https://puppet.com/blog/lessons-year-puppet">blog</a>.
+                  If you'd like to read more about working at Puppet, check out these blog posts from previous and current interns:
+                </p>
+                <p>
+                  <a href="https://puppet.com/blog/lessons-year-puppet/">Lessons from a year at Puppet</a> | <strong>Kezie Todd</strong>
+                </p>
+                <p>
+                  <a href="https://medium.com/peopleofpuppet/month-1-into-ux-interning-remotely-in-the-midst-of-a-world-pandemic-33884a81f2db">First month into my UX internship: remotely, in the midst of a world pandemic</a> | <strong>Emma Corbett</strong>
+                </p>
+                <p>
+                  <a href="https://puppetlabs.github.io/iac/docs/life_of_intern.html">Life of an Intern at Puppet</a> | <strong>Disha Kareer</strong>
                 </p>
               </Grid.Column>
             </Grid.Row>
